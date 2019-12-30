@@ -8,8 +8,8 @@
 				<i class="material-icons prefix">poll</i>
 				<select id="cuisine" name="cuisine_type">
                     <option value="" disabled selected>Choose Cuisine</option>
-                    {% for c in cuisine %}
-                    <option value="{{c.cuisine_type}}">{{c.cuisine_type}}</option>
+                    {% for cuisine in cuisines %}
+                    <option value="{{cuisine.cuisine_type}}">{{cuisine.cuisine_type}}</option>
                     {% endfor %}
 
                 </select>

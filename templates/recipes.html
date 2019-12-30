@@ -11,7 +11,7 @@
             </div>
             <div class="col s2"> 
                 <div class="inline-actions">  
-                    <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small">Done</a>
+                    <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small">Remove</a>
                     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
                 </div> 
             </div>
@@ -21,6 +21,8 @@
 		</div>
 		<div class="collapsible-body">
 			<span>{{recipe.other_ingredients}}</span>
+            <span>{{recipe.method}}</span>
+            <span>{{recipe.tool}}</span>
 		</div>
 	</li>
 
