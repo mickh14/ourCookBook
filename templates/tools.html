@@ -1,0 +1,25 @@
+{% extends 'base.html'%} {% block content %}
+
+<div class="row">
+
+    <h3>Kitchen Tools</h3>
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for tool in tools %}
+        <li>
+            <div class="collapsible-header">
+                <a href="{{url_for('delete_tool', tool_id=tool._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
+                <a href="{{url_for('edit_tool', tool_id=tool._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
+                    
+                <div class="recipe_header">
+                    <strong>{{tool.tool_name}}</strong>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+
+    </ul>
+</div>
+<div>
+    <a href="{{url_for('add_tool')}}"   class="waves-effect waves-light btn"><i class="material-icons right">playlist_add</i>Add Kitchent Tool</a>
+</div>
+{% endblock %}

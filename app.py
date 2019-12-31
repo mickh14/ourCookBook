@@ -83,8 +83,40 @@ def insert_cuisine():
 
 @app.route('/add_cuisine')
 def add_cuisine():
-    return render_template('addcuisine.html') 
+    return render_template('addcuisine.html')
 
+@app.route('/get_tools')  
+def get_tools():
+    return render_template('tools.html',
+    tools=mongo.db.tools.find())
+
+@app.route('/edit_tool/<tool_id>')
+def edit_tool(tool_id):
+    return render_template('edittool.html',
+    tool=mongo.db.tools.find_one({'_id': ObjectId(tool_id)}))
+
+@app.route('/update_tool/<tool_id>', methods=['POST'])
+def update_tool(tool_id):
+    mongo.db.tools.update(
+        {'_id': ObjectId(tool_id)},
+        {'tool_name': request.form.get('tool_name')})
+    return redirect(url_for('get_tools'))
+
+@app.route('/delete_tool/<tool_id>')  
+def delete_tool(tool_id):
+    mongo.db.tools.remove({'_id':ObjectId(tool_id)})
+    return redirect(url_for('get_tools'))
+
+@app.route('/insert_tool', methods=['POST'])
+def insert_tool():
+    tool_doc = {'tool_name': request.form.get('tool_name')}
+    mongo.db.tools.insert_one(tool_doc)
+    return redirect(url_for('get_tools'))
+
+
+@app.route('/add_tool')
+def add_tool():
+    return render_template('addtool.html')     
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

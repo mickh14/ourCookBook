@@ -16,6 +16,21 @@
 				<label>Recipe Cuisine</label>
 			</div>
 		</div>
+
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">poll</i>
+				<select id="tool" name="tool_name">
+                    <option value="" disabled selected>Choose Tool</option>
+                    {% for tool in tools %}
+                    <option value="{{tool.tool_name}}">{{tool.tool_name}}</option>
+                    {% endfor %}
+
+                </select>
+				<label>Recipe Tool</label>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">assignment</i>
