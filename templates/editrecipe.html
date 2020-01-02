@@ -7,8 +7,8 @@
 			<div class="input-field col s12">
 				<i class="material-icons prefix">poll</i>
 				<select id="cuisine" name="cuisine_type">
-                    <option value="" disabled selected>Choose Category</option>
-                    {% for cuisine in cuisine %}
+                    <option value="" disabled selected>Choose Cuisine</option>
+                    {% for cuisine in cuisines %}
                         {% if cuisine.cuisine_type == cuisine.cuisine_type%}
                             <option value="{{cuisine.cuisine_type}}" selected >{{cuisine.cuisine_type}}</option>
                         {% else %}
@@ -20,17 +20,45 @@
 				<label>Recipe Cuisine</label>
 			</div>
 		</div>
+
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">poll</i>
+				<select id="tool" name="tool_name">
+                    <option value="" disabled selected>Choose Tool</option>
+                    {% for tool in tools %}
+                        {% if tool.tool_name == tool.tool_name%}
+                            <option value="{{tool.tool_name}}" selected >{{tool.tool_name}}</option>
+                        {% else %}
+                            <option value="{{tool.tool_name}}" >{{tool.tool_name}}</option>
+                        {% endif %}
+                    {% endfor %}
+
+                </select>
+				<label>Recipe Cuisine</label>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">assignment</i>
-				<input id="task_name" name="task_name" type="text" class="validate" value="{{task.task_name}}">
-				<label for="icon_prefix">Cuisine Name</label>
+				<input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
+				<label for="icon_prefix">Recipe Name</label>
 			</div>
 		</div>
+
+        <div class="row">
+			<div class="input-field col s12" id="matfix">
+				<i class="material-icons prefix">today</i>
+				<input id="season" name="season" type="text" class="datepicker" value="{{recipe.season}}">
+				<label for="icon_prefix">Season</label>
+			</div>
+		</div>
+
 		<div class="row">
 			<<div class="input-field col s12">
 				<i class="material-icons prefix">subject</i>
-				<textarea name="main_ingredient" id="main_ingredient" class="materialize-textarea"></textarea>
+				<input id="main_ingredient" name="main_ingredient"  type="text" class="validate" value="{{recipe.main_ingredient}}"></textarea>
 				<label for="icon_telephone">Main Ingredient</label>
 			</div>
 		</div>
@@ -38,7 +66,7 @@
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">subject</i>
-				<textarea name="other_ingredients" id="other_ingredients" class="materialize-textarea"></textarea>
+				<textarea id="other_ingredients" name="other_ingredients" type="text" class="validate" value="{{recipe.other_ingredients}}"></textarea>
 				<label for="icon_telephone">Other Ingredients</label>
 			</div>
 		</div>
@@ -46,7 +74,7 @@
 		<div class="row">
 				<div class="input-field col s12">
 				<i class="material-icons prefix">subject</i>
-				<textarea name="method" id="method" class="materialize-textarea"></textarea>
+				<textarea id="method" name="method" id="method" type="text" class="validate" value="{{recipe.method}}"></textarea>
 				<label for="icon_telephone">Method</label>
 			</div>
 		</div>
@@ -63,7 +91,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        due_date = Date.parse('{{task.due_date}}')
+        due_date = Date.parse('{{recipe.due_date}}')
         $('#due_date').pickadate('picker').set('select', due_date, { format: 'dd/mm/yyyy'}).trigger('change')
     });
 </script>

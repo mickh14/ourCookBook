@@ -12,14 +12,24 @@ mongo = PyMongo(app)
 
 @app.route('/')
 
+@app.route('/recipes_search')
+def recipes_search():
+    return render_template("search.html",
+    cuisines=mongo.db.cuisines.find())
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template("addrecipe.html", 
-    cuisines=mongo.db.cuisines.find())   
+    cuisines=mongo.db.cuisines.find(),
+    tools=mongo.db.tools.find())  
 
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
+
+@app.route('/search_results/<cuisine_type>', methods=["POST"])
+def search_results(cuisine_type):
+    return render_template("recipes.html", recipes=mongo.db.recipes.find(cuisine_type))
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -31,7 +41,8 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_cuisines = mongo.db.cuisines.find()
-    return render_template('editrecipe.html', recipe=the_recipe, cuisines=all_cuisines)
+    all_tools = mongo.db.tools.find()
+    return render_template('editrecipe.html', recipe=the_recipe, cuisines=all_cuisines, tools=all_tools)
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
