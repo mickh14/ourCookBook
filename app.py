@@ -11,11 +11,9 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:Jl011187@cluster0-u6mnz.mongodb.ne
 mongo = PyMongo(app)
 
 @app.route('/')
-
 @app.route('/recipes_search')
 def recipes_search():
-    return render_template("search.html",
-    cuisines=mongo.db.cuisines.find())
+    return render_template("search.html", cuisines=mongo.db.cuisines.find())
 
 @app.route('/add_recipe')
 def add_recipe():
@@ -27,12 +25,13 @@ def add_recipe():
 def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
-@app.route('/search_results/<cuisine_type>', methods=["POST"])
-def search_results(cuisine_type):
-    return render_template("recipes.html", recipes=mongo.db.recipes.find(cuisine_type))
+@app.route('/cuisine_match', methods=["POST"])
+def cuisine_match():
+    the_cuisine = request.form['cuisine_type']
+    return render_template("recipes.html", search_recipes=mongo.db.recipes.find({'cuisine_type': the_cuisine}))
 
 @app.route('/insert_recipe', methods=['POST'])
-def insert_recipe():
+def insert_recipe(): 
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))        
