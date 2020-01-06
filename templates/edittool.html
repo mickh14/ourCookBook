@@ -1,7 +1,8 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h3>Edit Tool</h3>
+<h4 class="page_header"">Edit Tool</h4>
+<hr>
 <div class="row">
     <form action="{{ url_for('update_tool', tool_id=tool._id) }}" method="POST" class="col s12">
         <div class="row">

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
+/*-----------------buttongs*/
 .btn_small {
     height: 24px;
     width: 80px;
@@ -6,18 +9,39 @@
     padding: 0 0.5em;
 }
 
-.recipe_header {
+/*-----------------Page Headers*/
+.page_header {
     margin-top: 5px;
+    font-family: fantasy;
+    font-size: 50;
+    color: black;
+    text-align: center;
 }
 
-.recipe-container{
-    background-color: #f05f40; 
+
+/*-----------------Backgrounds*/
+.colap-head-style{
+    background: red;
+}
+.colap-body-style{
+    background: pink;
 }
 
-.recipe-test {
-    background: green;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.colap-head-style{
+    background: red;
+}
+
+.add-background{
+    background: blue;
+}
+
+
+/*-----------------Nav Style*/
+.nav_style{
+    background: #45899f; 
+}
+
+.nav-text{
+    color: blue;
+    font-family: serif;
 }
