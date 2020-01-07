@@ -9,6 +9,11 @@
     padding: 0 0.5em;
 }
 
+.add-button{
+    background-color: #855bab;
+    border-radius: 40px;
+    border: 2px solid black; 
+}
 /*-----------------Page Headers*/
 .page_header {
     margin-top: 5px;
@@ -21,19 +26,22 @@
 
 /*-----------------Backgrounds*/
 .colap-head-style{
-    background: red;
+    background: rgba(168, 209, 216, 0.7);
 }
 .colap-body-style{
-    background: pink;
-}
-
-.colap-head-style{
-    background: red;
+    background: #4d8cb95e;
 }
 
 .add-background{
-    background: blue;
+    background: rgba(255,255,255,0.7);
 }
+
+.main_bgd{
+    
+    background: url("../images/recipes_banner.jpg") no-repeat center fixed;
+}
+
+
 
 
 /*-----------------Nav Style*/
