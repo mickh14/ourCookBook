@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h4 class="page_header">Buy Tool</h4>
+    <hr>
+    <div class="container row add-background">
+        {% for tool in tools %}
+        <div class="col s12 m6 l4">
+            <a href="" class="waves-effect waves-light btn btn_small">Buy</a>
+            <span><strong>{{tool.tool_name}} Cook Kitchen:</strong></span>
+            <p>{{tool.tool_description}}</p>
+        </div>
+        {% endfor %}
+	{% endblock %}

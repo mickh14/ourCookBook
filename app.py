@@ -119,14 +119,19 @@ def delete_tool(tool_id):
 
 @app.route('/insert_tool', methods=['POST'])
 def insert_tool():
-    tool_doc = {'tool_name': request.form.get('tool_name')}
-    mongo.db.tools.insert_one(tool_doc)
+    tools = mongo.db.tools
+    tools.insert_one(request.form.to_dict())
     return redirect(url_for('get_tools'))
 
 
 @app.route('/add_tool')
 def add_tool():
-    return render_template('addtool.html')     
+    return render_template('addtool.html')
+
+@app.route('/buy_tool')
+def buy_tool():
+    return render_template('buytool.html',
+    tools=mongo.db.tools.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

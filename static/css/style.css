@@ -17,7 +17,7 @@
 /*-----------------Page Headers*/
 .page_header {
     margin-top: 5px;
-    font-family: fantasy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 50;
     color: black;
     text-align: center;
@@ -51,5 +51,5 @@
 
 .nav-text{
     color: blue;
-    font-family: serif;
+    font-family: garamond;
 }
