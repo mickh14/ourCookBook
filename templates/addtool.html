@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 
 {% block content %}
-    <h4 class="page_header"">Add Tool</h4>
+    <h4 class="page_header">Add Tool</h4>
     <hr>
     <div class="container add-background">
         <form action="{{ url_for('insert_tool') }}" method="POST" class="col s12">
@@ -17,6 +17,13 @@
                     <i class="material-icons prefix">poll</i>
                     <input id="tool_description" name="tool_description" type="text" class="validate">
                     <label for="cuisine_type">Tool Description</label>
+                </div>
+            </div>
+                        <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <input id="tool_cost" name="tool_cost" type="text" class="validate">
+                    <label for="cuisine_type">Tool Cost</label>
                 </div>
             </div>
             <div class="row center">

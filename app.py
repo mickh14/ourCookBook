@@ -1,7 +1,9 @@
 import os
+import json
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from bson.json_util import loads
 
 app = Flask(__name__)
 
@@ -13,7 +15,8 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/recipes_search')
 def recipes_search():
-    return render_template("search.html", cuisines=mongo.db.cuisines.find())
+    return render_template("search.html", 
+    cuisines=mongo.db.cuisines.find())
 
 @app.route('/add_recipe')
 def add_recipe():
@@ -27,8 +30,9 @@ def get_recipes():
 
 @app.route('/cuisine_match', methods=["POST"])
 def cuisine_match():
-    the_cuisine = request.form['cuisine_type']
-    return render_template("recipes.html", search_recipes=mongo.db.recipes.find({'cuisine_type': the_cuisine}))
+    the_cuisine = request.form['cuisine_name']
+    search_recipes = mongo.db.recipes.find({'cuisine': the_cuisine})
+    return render_template("recipes.html", search_recipes=search_recipes)
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe(): 
@@ -107,9 +111,13 @@ def edit_tool(tool_id):
 
 @app.route('/update_tool/<tool_id>', methods=['POST'])
 def update_tool(tool_id):
-    mongo.db.tools.update(
-        {'_id': ObjectId(tool_id)},
-        {'tool_name': request.form.get('tool_name')})
+    tools = mongo.db.tools
+    tools.update( {'_id': ObjectId(tool_id)},
+    {
+        'tool_name':request.form.get('tool_name'),
+        'tool_description':request.form.get('tool_description'),
+        
+    })
     return redirect(url_for('get_tools'))
 
 @app.route('/delete_tool/<tool_id>')  

@@ -2,29 +2,29 @@
 
 {% block content %}
 <div class="container">
-    <h4 class="page_header">Find the best recipe</h4>
-    <hr>
-    <div class="row">
-            <form action="{{ url_for('cuisine_match')}}" method="POST" class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">poll</i>
-                    <select id="cuisine" name="cuisine_type">
+	<h4 class="page_header">Find the best recipe</h4>
+	<hr>
+	<div class="row">
+		<form action="{{ url_for('cuisine_match')}}" method="POST" class="col s12">
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">poll</i>
+					<select id="cuisine_name" name="cuisine_name">
                         <option value="" disabled selected>Choose Cuisine</option>
                         {% for cuisine in cuisines %}
-                        <option value="{{cuisine.cuisine_type}}">{{cuisine.cuisine_type}}</option>
+                        <option value="{{cuisine.name}}">{{cuisine.name}}</option>
                         {% endfor %}
                 </select>
-				<label>Enter Cuisine</label>
+					<label>Enter Cuisine</label>
+				</div>
 			</div>
-		</div>
-        <div class="row center">
-			<button class="btn waves-effect waves-light add-button" type="submit" name="action">Search
+			<div class="row center">
+				<button class="btn waves-effect waves-light add-button" type="submit" name="action">Search
                 <i class="material-icons right">playlist_add</i>
           </button>
-		</div>
-    </form>
-    </div>   
-</div> 
+			</div>
+		</form>
+	</div>
+</div>
 
 {% endblock %}

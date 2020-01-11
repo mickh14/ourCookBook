@@ -19,17 +19,18 @@
     margin-top: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 50;
-    color: black;
+    color: white;
     text-align: center;
+    background: #3b3c5f82;
 }
 
 
 /*-----------------Backgrounds*/
 .colap-head-style{
-    background: rgba(168, 209, 216, 0.7);
+    background: #3b3c5f82;
 }
 .colap-body-style{
-    background: #4d8cb95e;
+    background: rgba(247, 230, 230, 0.7);
 }
 
 .add-background{
@@ -37,13 +38,24 @@
 }
 
 .main_bgd{
-    
+    height: 100vh;
     background: url("../images/recipes_banner.jpg") no-repeat center fixed;
+
 }
 
+.tool_bgd{
+    
+    background: url("../images/cw2.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
+}
 
-
+.card-bgd {
+    background: #3b3c5f82;
+}
 /*-----------------Nav Style*/
 .nav_style{
     background: #45899f; 
@@ -53,3 +65,5 @@
     color: blue;
     font-family: garamond;
 }
+
+

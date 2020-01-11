@@ -9,10 +9,10 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">poll</i>
-                            <select id="cuisine" name="cuisine_type">
+                            <select id="cuisine" name="cuisine">
                                 <option value="" disabled selected>Choose Cuisine</option>
                                 {% for cuisine in cuisines %}
-                                <option value="{{cuisine.cuisine_type}}">{{cuisine.cuisine_type}}</option>
+                                <option value="{{cuisine.name}}">{{cuisine.name}}</option>
                                 {% endfor %}
 
                             </select>
