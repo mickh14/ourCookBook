@@ -39,8 +39,12 @@
 
 .main_bgd{
     height: 100vh;
-    background: url("../images/recipes_banner.jpg") no-repeat center fixed;
+    background: url("../images/recipes_banner.jpg") no-repeat center fixed;  
 
+}
+
+.add-rec-bgd{
+    background: rgba(83, 98, 169, 0.2);
 }
 
 .tool_bgd{
@@ -66,4 +70,15 @@
     font-family: garamond;
 }
 
+/*-----------------Add Recipe Style*/
+.ingredient-style {
+    background: pink;
+}
 
+.duration-style {
+    background: green;
+}
+
+.method-style {
+    background: blue;
+}
