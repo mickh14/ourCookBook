@@ -38,18 +38,17 @@
 }
 
 .main_bgd{
-    height: 100vh;
-    background: url("../images/recipes_banner.jpg") no-repeat center fixed;  
+    background: url("../images/table.jpg") no-repeat center fixed;  
 
 }
 
 .add-rec-bgd{
-    background: rgba(83, 98, 169, 0.2);
+    background: url("../images/spicerepeat.jpg") repeat center fixed;
 }
 
 .tool_bgd{
     
-    background: url("../images/cw2.jpg") no-repeat center fixed;
+    background: url("../images/kitchen.jpg") no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

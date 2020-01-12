@@ -2,23 +2,28 @@
 
 <div class="row">
 
-    <h4 class="page_header">Cuisines</h4>
-    <hr> 
-    <div class="container colap-body-style">
-        <ul class="collapsible" data-collapsible="accordion">
-        {% for cuisine in cuisines %}
-        <li>
-            <div class="collapsible-header colap-head-style">
-                <a href="{{url_for('delete_cuisine', cuisine_id=cuisine._id)}}" class="waves-effect waves-light btn btn_small">Del</a>
-                <a href="{{url_for('edit_cuisine', cuisine_id=cuisine._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
-                    
-                <div class="recipe_header">
-                    <strong>{{cuisine.name}}</strong>
-                </div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+	<h4 class="page_header">Cuisines</h4>
+	<hr>
+	<div class="container">
+        <div class="row">
+		{% for cuisine in cuisines %}
+		
+			<div class="col s12 m6 l3">
+				<div class="card card-bgd">
+					<div class="card-content white-text center">
+						<span class="card-title">{{cuisine.name}}</span>
+					</div>
+					<div class="card-action center">					
+                        <a href="{{url_for('delete_cuisine', cuisine_id=cuisine._id)}}"
+                            class="waves-effect waves-light btn btn_small">Del</a>
+                        <a href="{{url_for('edit_cuisine', cuisine_id=cuisine._id)}}"
+                            class="waves-effect waves-light btn btn_small blue">Edit</a>
+					</div>
+				</div>
+			</div>
+		
+		{% endfor %}
+        </div>
     </div>
     
 </div>
