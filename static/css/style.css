@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 
-/*-----------------buttongs*/
+/*-----------------buttons*/
 .btn_small {
     height: 24px;
     width: 80px;
@@ -70,14 +70,21 @@
 }
 
 /*-----------------Add Recipe Style*/
+.main-item-style {
+    background: rgba(33, 29, 29, 0.42);
+}
+
 .ingredient-style {
-    background: pink;
+    background: rgba(33, 29, 29, 0.42);
+    padding-right: 10px;
 }
 
 .duration-style {
-    background: green;
+    background: rgba(33, 29, 29, 0.42);
 }
 
 .method-style {
-    background: blue;
+    background: rgba(33, 29, 29, 0.42);
 }
+
+/*-----------------view Recipe Style*/

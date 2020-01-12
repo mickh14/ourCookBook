@@ -4,70 +4,84 @@
 <h4 class="page_header">Recipies</h4>
 <hr>
 <div class="container colap-body-style">
-    <ul class="collapsible" data-collapsible="accordion">
-        {% for recipe in recipes %}
-        <li>
-            <div class="collapsible-header colap-head-style">
-                    <div class="col l1">
-                        <i class="material-icons">expand_more</i>
-                    </div>
-                    <div class="col l3">
-                        <div class="inline-actions">  
-                            <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small">Remove</a>
-                            <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
-                        </div> 
-                    </div>
-                    <div class="col l9">
-                        <strong>{{recipe.recipe_name}}</strong> - {{recipe.main_ingredient}}
-                    </div> 
-                
-        
-            </div>
-            <div class="collapsible-body">
-                <div class="row">
-                    <div class="col s12 m3 l3">
-                        <span><strong>Ingredients:</strong></br>
-                        <ol>
-                            <li>{{recipe.main_ingredient}}</li>
-                            <li>{{recipe.ing_one}}</span></li>
-                            <li>{{recipe.ing_two}}</span></li>
-                            <li>{{recipe.ing_three}}</span></li>
-                            <li>{{recipe.ing_four}}</span></li>
-                            <li>{{recipe.ing_five}}</span></li>
-                            <li>{{recipe.ing_six}}</span></li>
-                            <li>{{recipe.ing_seven}}</span></li>
-                            <li>{{recipe.ing_eight}}</span></li>
-                        </ol>
-                    </div>
-                    <div class="col s12 m9 l9">
-                        <span><strong>Method:</strong></br>
-                        <ul>
-                            <li><strong>Step 1:</strong> {{recipe.step_one}}</li>
-                            <li>  </li>
-                            <li><strong>Step 2:</strong> {{recipe.step_two}}</span></li>
-                            <li>  </li>
-                            <li><strong>Step 3:</strong> {{recipe.step_three}}</span></li>
-                            <li>  </li>
-                            <li><strong>Step 4:</strong> {{recipe.step_four}}</span></li>
-                            <li>  </li>
-                            <li><strong>Step 5:</strong> {{recipe.step_five}}</span></li>
-                            <li>  </li>
-                            <li><strong>Step 6:</strong> {{recipe.step_six}}</span></li>
-                        </ul>
-                    </div>
-                </div>    
-                <div class="col s12">   
+	<ul class="collapsible" data-collapsible="accordion">
+		{% for recipe in recipes %}
+		<li>
+			<div class="collapsible-header colap-head-style">
+				<div class="col l1">
+					<i class="material-icons">expand_more</i>
+				</div>
+				<div class="col l3">
+					<div class="inline-actions">
+						<a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+							class="waves-effect waves-light btn btn_small">Remove</a>
+						<a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
+							class="waves-effect waves-light btn btn_small blue">Edit</a>
+					</div>
+				</div>
+				<div class="col l9">
+					<strong>{{recipe.recipe_name}}</strong> - {{recipe.main_ingredient}}
+				</div>
+
+
+			</div>
+			<div class="collapsible-body">
+                <div class="row ingredient-style center">
                     <a href="{{url_for('buy_tool')}}" class="waves-effect waves-light btn btn_small">Buy</a>
                     <span><strong>Kitchen Tool:</strong>{{recipe.tool_name}}</span>
                 </div>
-                <div class="col s12">   
-                    <span><strong>Recommended time of year:</strong> {{recipe.season}}</span>
+
+				<div class="row duration-style">
+					<div class="col s6 m16 l4 center">
+						<i class="material-icons prefix">access_time</i>
+						<p>Preperation: {{recipe.prep_time}} minutes</p>
+					</div>
+					<div class="col s6 m6 l4 center">
+						<i class="material-icons prefix">access_time</i>
+						<p>Cook: {{recipe.cook_time}} minutes</p>
+					</div>
+					<div class="col s12 m12 l4 center">
+						<i class="material-icons prefix">access_time</i>
+						<p>Total: {{recipe.total_time}} hours</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="ingredient-style col s12 m3 l3">
+						<span><strong>Ingredients:</strong></span></br>
+                            <ol>
+                                <li>{{recipe.main_ingredient}}</li>
+                                <li>{{recipe.ing_one}}</span></li>
+                                <li>{{recipe.ing_two}}</span></li>
+                                <li>{{recipe.ing_three}}</span></li>
+                                <li>{{recipe.ing_four}}</span></li>
+                                <li>{{recipe.ing_five}}</span></li>
+                                <li>{{recipe.ing_six}}</span></li>
+                                <li>{{recipe.ing_seven}}</span></li>
+                                <li>{{recipe.ing_eight}}</span></li>
+                            </ol>
+                    </div>
+                    <div class="method-style col s12 m9 l9">
+                        <strong>Method:</strong></br>
+                            <ul>
+                                <li><strong>Step 1:</strong> {{recipe.step_one}}</li></br>
+                                <li><strong>Step 2:</strong> {{recipe.step_two}}</span></li></br>
+                                <li><strong>Step 3:</strong> {{recipe.step_three}}</span></li></br>
+                                <li><strong>Step 4:</strong> {{recipe.step_four}}</span></li></br>
+                                <li><strong>Step 5:</strong> {{recipe.step_five}}</span></li></br>
+                                <li><strong>Step 6:</strong> {{recipe.step_six}}</span></li></br>
+                            </ul>
+                    </div>
+                </div>
+
+                <div class="row center ingredient-style">
+                    <span><strong>Seaon:</strong> {{recipe.season}}</span>
                     <br>
-                </div> 
+                </div>
             </div>
         </li>
 
-        {% endfor %}
+{% endfor %}
     </ul>
 </div>
 

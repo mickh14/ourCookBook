@@ -78,9 +78,11 @@ def edit_cuisine(cuisine_id):
 
 @app.route('/update_cuisine/<cuisine_id>', methods=['POST'])
 def update_cuisine(cuisine_id):
-    mongo.db.cuisines.update(
-        {'_id': ObjectId(cuisine_id)},
-        {'cuisine_type': request.form.get('cuisine_type')})
+    cuisines = mongo.db.cuisines
+    cuisines.update( {'_id': ObjectId(cuisine_id)},
+    {
+        'name':request.form.get('name'),        
+    })
     return redirect(url_for('get_cuisines'))
 
 @app.route('/delete_cuisine/<cuisine_id>')  
