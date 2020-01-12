@@ -13,11 +13,11 @@
 					<div class="card-content white-text center">
 						<span class="card-title">{{cuisine.name}}</span>
 					</div>
-					<div class="card-action center">					
+					<div class="card-action center custom_text">					
                         <a href="{{url_for('delete_cuisine', cuisine_id=cuisine._id)}}"
-                            class="waves-effect waves-light btn btn_small">Del</a>
+                            class="waves-effect waves-light btn_remove center btn_small">Del</a>
                         <a href="{{url_for('edit_cuisine', cuisine_id=cuisine._id)}}"
-                            class="waves-effect waves-light btn btn_small blue">Edit</a>
+                            class="waves-effect waves-light btn_edit center btn_small">Edit</a>
 					</div>
 				</div>
 			</div>

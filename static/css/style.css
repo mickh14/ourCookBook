@@ -10,9 +10,25 @@
 }
 
 .add-button{
-    background-color: #855bab;
+    background-color: rgba(142, 124, 157, 0.66);
     border-radius: 40px;
     border: 2px solid black; 
+}
+
+.btn_remove{
+    background-color: rgba(239, 93, 77, 0.91);
+    border-radius: 40px;
+    color: white;
+}
+
+.btn_edit{
+    background-color: rgba(51, 56, 117, 0.91);
+    border-radius: 40px;
+    color: white;
+}
+
+.custom_text{
+    color: white;
 }
 /*-----------------Page Headers*/
 .page_header {
@@ -61,7 +77,7 @@
 }
 /*-----------------Nav Style*/
 .nav_style{
-    background: #45899f; 
+    background: hsla(36, 56%, 78%, 0.54); 
 }
 
 .nav-text{
