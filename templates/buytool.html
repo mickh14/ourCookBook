@@ -37,27 +37,36 @@
 		<h4 class="page_header white-text">Choose from the wonderful Cook Book range</h4>
 		<hr>
 		<div class="container">
-			<div class="row">
-				{% for tool in tools %}
-				<div class="col s12 m6 l4">
-                    <div class="card card-bgd">
-                        <div class="card-content white-text">
-                            <span class="card-title"><strong>€{{tool.tool_cost}}:<i> Cook Book</i> {{tool.tool_name}}:</strong></span>
-                            <p>{{tool.tool_description}}</p>
-                            <div class="row center card-action">
-                                <a href="" class="waves-effect waves-light btn add-button">Buy</a>
-                            </div>
-                        </div>    
-                    </div>
+			<div class="carousel carousel-slider center">
+				<div class="carousel-fixed-item center">
+					<a class="btn waves-effect white grey-text darken-text-2">Buy</a>
 				</div>
+				{% for tool in tools %}
+
+				<div class="card card-bgd carousel-item white-text">
+					<div class="card-content white-text">
+						<span class="card-title"><strong><i> Cook Book</i> {{tool.tool_name}}: €{{tool.tool_cost}}</strong></span>
+						<p>{{tool.tool_description}}</p>
+					</div>
+				</div>
+
 
 				{% endfor %}
 			</div>
 		</div>
-	</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+                $('.carousel').carousel();
+            });
+
+            $('.carousel.carousel-slider').carousel({
+            fullWidth: true,
+            indicators: true
+        });
+		</script>
 </body>
 
 </html>

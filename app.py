@@ -90,7 +90,7 @@ def delete_cuisine(cuisine_id):
 
 @app.route('/insert_cuisine', methods=['POST'])
 def insert_cuisine():
-    cuisine_doc = {'cuisine_type': request.form.get('cuisine_type')}
+    cuisine_doc = {'name': request.form.get('cuisine_type')}
     mongo.db.cuisines.insert_one(cuisine_doc)
     return redirect(url_for('get_cuisines'))
 
