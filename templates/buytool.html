@@ -15,17 +15,19 @@
 <header>
 	<nav>
 		<div class="nav-wrapper nav_style">
-			<a href="{{url_for('get_recipes')}}" class="brand-logo nav-text">Cook Book</a>
+			<a href="{{url_for('get_recipes')}}" class="brand-logo nav-text">OurCookBook</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="{{url_for('recipes_search')}}">Search</a></li>
 				<li><a href="{{url_for('add_recipe')}}">New Recipe</a></li>
-				<li><a href="{{url_for('get_cuisines')}}">Manage Cuisines</a></li>
+				<li><a href="{{url_for('get_cuisines')}}">Cuisines</a></li>
+				<li><a href="{{url_for('buy_tool')}}">Kitchen Appliances</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
 				<li><a href="{{url_for('recipes_search')}}">Search</a></li>
 				<li><a href="{{url_for('add_recipe')}}">New Recipe</a></li>
-				<li><a href="{{url_for('get_cuisines')}}">Manage Cuisines</a></li>
+				<li><a href="{{url_for('get_cuisines')}}">Cuisines</a></li>
+				<li><a href="{{url_for('buy_tool')}}">Kitchen Appliances</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -34,19 +36,19 @@
 <body>
 
 	<div class="container-fluid tool_bgd">
-		<h4 class="page_header white-text">Choose from the wonderful Cook Book range</h4>
+		<h4 class="page_header white-text">Choose from the wonderful OurCookBook range</h4>
 		<hr>
 		<div class="container">
 			<div class="carousel carousel-slider center">
 				<div class="carousel-fixed-item center">
-					<a class="btn waves-effect white grey-text darken-text-2">Buy</a>
+					
 				</div>
 				{% for tool in tools %}
 
 				<div class="card card-bgd carousel-item white-text">
 					<div class="card-content white-text">
                         <div>
-                            <span class="card-title"><i> Cook Book</i><strong> {{tool.tool_name}}: €{{tool.tool_cost}}</strong></span>
+                            <span class="card-title">OurCookBook<strong> {{tool.tool_name}}: €{{tool.tool_cost}}</strong></span>
                         </div>
                         <div class="row">
                             <div class="col s12 m12 l4">
@@ -59,7 +61,7 @@
                             </div>
                             <div class="col s12 m6 l4">
                                 <i class="material-icons prefix">done_all</i>
-						        <p>Warranty: {{tool_warranty}} Years</p>
+						        <p>Warranty: {{tool.tool_warranty}} Years</p>
                             </div>
                         </div>
                         <div>
@@ -71,6 +73,9 @@
 
 				{% endfor %}
 			</div>
+            <div class="center ingredient-style">
+                <a href="#" class="waves-effect waves-light btn_buy center btn_small">Buy</a>
+            </div>
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

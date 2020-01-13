@@ -27,13 +27,19 @@
     color: white;
 }
 
+.btn_buy{
+    background-color: hsla(158, 8%, 63%, 0.91);
+    border-radius: 40px;
+    color: white;
+}
+
 .custom_text{
     color: white;
 }
 /*-----------------Page Headers*/
 .page_header {
     margin-top: 5px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: garamond;
     font-size: 50;
     color: white;
     text-align: center;
