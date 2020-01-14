@@ -17,7 +17,7 @@
 		<div class="nav-wrapper nav_style">
 			<a href="{{url_for('get_recipes')}}" class="brand-logo nav-text">OurCookBook</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<ul id="nav-mobile" class="right hide-on-med-and-down nav-text">
 				<li><a href="{{url_for('recipes_search')}}">Search</a></li>
 				<li><a href="{{url_for('add_recipe')}}">New Recipe</a></li>
 				<li><a href="{{url_for('get_cuisines')}}">Cuisines</a></li>
@@ -37,86 +37,86 @@
 
 	<div class="container-fluid add-rec-bgd">
 
-		<h4 class="page_header">Add Recipe</h4>
+		<h4 class="page_header">New Recipe</h4>
 		<hr>
 		<div class="container">
 			<div class="add-background">
 				<div class="row">
 					<form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
-                        <div class="main-item-style">   
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">insert_comment</i>
-                                    <input id="recipe_name" name="recipe_name" type="text" class="validate">
-                                    <label for="icon_prefix">Recipe Name</label>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">language</i>
-                                    <select id="cuisine" name="cuisine">
+						<div class="main-item-style">
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">insert_comment</i>
+									<input id="recipe_name" name="recipe_name" type="text" class="validate">
+									<label for="icon_prefix">Recipe Name</label>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">language</i>
+									<select id="cuisine" name="cuisine">
                                     <option value="" disabled selected>Choose Cuisine</option>
                                     {% for cuisine in cuisines %}
                                     <option value="{{cuisine.name}}">{{cuisine.name}}</option>
                                     {% endfor %}
 
                                 </select>
-                                    <label>Recipe Cuisine</label>
-                                </div>
-                            </div>
+									<label>Recipe Cuisine</label>
+								</div>
+							</div>
 
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">restaurant_menu</i>
-                                    <select id="tool" name="tool_name">
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">restaurant_menu</i>
+									<select id="tool" name="tool_name">
                                     <option value="" disabled selected>Choose Tool</option>
                                     {% for tool in tools %}
                                     <option value="{{tool.tool_name}}">{{tool.tool_name}}</option>
                                     {% endfor %}
 
                                 </select>
-                                    <label>Kitchen Tool</label>
-                                </div>
-                            </div>						
+									<label>Kitchen Tool</label>
+								</div>
+							</div>
 
-                            <div class="row">
-                                <div class="input-field col s12" id="matfix">
-                                    <i class="material-icons prefix">today</i>
-                                    <input id="season" name="season" type="text" class="datepicker">
-                                    <label for="icon_prefix">Season</label>
-                                </div>
-                            </div>
-                        </div>    
+							<div class="row">
+								<div class="input-field col s12" id="matfix">
+									<i class="material-icons prefix">today</i>
+									<input id="season" name="season" type="text" class="datepicker">
+									<label for="icon_prefix">Season</label>
+								</div>
+							</div>
+						</div>
 
-                        <div class="row duration-style">
-                            <h5>Duration</h5>
+						<div class="row duration-style">
+							<h5 class="center">Duration</h5>
 							<div class="input-field col s12 m6 l4">
 								<i class="material-icons prefix">access_time</i>
 								<textarea name="prep_time" id="prep_time" class="materialize-textarea"></textarea>
 								<label for="icon_telephone">Preperation Time</label>
-							</div>						
+							</div>
 							<div class="input-field col s12 m6 l4">
 								<i class="material-icons prefix">access_time</i>
 								<textarea name="cook_time" id="cook_time" class="materialize-textarea"></textarea>
 								<label for="icon_telephone">Cook Time</label>
-							</div>						
+							</div>
 							<div class="input-field col s12 m6 l4">
 								<i class="material-icons prefix">access_time</i>
 								<textarea name="total_time" id="total_time" class="materialize-textarea"></textarea>
 								<label for="icon_telephone">Total Time</label>
-							</div>                            
+							</div>
 						</div>
 
 						<div class="row ingredient-style">
-                            <h5>Ingredients</h5>
+							<h5 class="center">Ingredients</h5>
 							<div class="input-field col s12">
 								<i class="material-icons prefix">filter_1</i>
 								<textarea name="main_ingredient" id="main_ingredient" class="materialize-textarea"></textarea>
 								<label for="icon_telephone">Main Ingredient</label>
 							</div>
-						
-                           
+
+
 							<div class="input-field col s12 m6 l3">
 								<i class="material-icons prefix">filter_2</i>
 								<textarea name="ing_one" id="ing_one" class="materialize-textarea"></textarea>
@@ -157,11 +157,11 @@
 								<textarea name="ing_eight" id="ing_eight" class="materialize-textarea"></textarea>
 								<label for="icon_telephone">Ingredient 8</label>
 							</div>
-                            
+
 						</div>
 
 						<div class="row method-style">
-                            <h5>Method</h5>
+							<h5 class="center">Method</h5>
 							<div class="input-field col s12 m6 l3">
 								<i class="material-icons prefix">filter_1</i>
 								<textarea name="step_one" id="step_one" class="materialize-textarea"></textarea>
@@ -192,7 +192,7 @@
 								<textarea name="step_six" id="Step_six" class="materialize-textarea"></textarea>
 								<label for="icon_telephone">Step 6</label>
 							</div>
-                            
+
 						</div>
 
 						<div class="row center">

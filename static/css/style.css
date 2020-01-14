@@ -13,25 +13,38 @@
     background-color: rgba(142, 124, 157, 0.66);
     border-radius: 40px;
     border: 2px solid black; 
+    margin-bottom: 10px
 }
 
 .btn_remove{
     background-color: rgba(239, 93, 77, 0.91);
     border-radius: 40px;
     color: white;
+    margin-bottom: 10px
 }
 
 .btn_edit{
     background-color: rgba(51, 56, 117, 0.91);
     border-radius: 40px;
     color: white;
+    margin-bottom: 10px
 }
 
 .btn_buy{
     background-color: hsla(158, 8%, 63%, 0.91);
     border-radius: 40px;
     color: white;
+    margin-bottom: 10px
 }
+
+.btn_save{
+    background-color: hsla(158, 29%, 59%, 0.91);
+    color: white;
+}
+
+
+
+
 
 .custom_text{
     color: white;
@@ -60,7 +73,14 @@
 }
 
 .main_bgd{
-    background: url("../images/table.jpg") no-repeat center fixed;  
+    background: url("../images/table.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
 
 }
 
@@ -87,7 +107,6 @@
 }
 
 .nav-text{
-    color: blue;
     font-family: garamond;
 }
 

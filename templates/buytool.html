@@ -17,7 +17,7 @@
 		<div class="nav-wrapper nav_style">
 			<a href="{{url_for('get_recipes')}}" class="brand-logo nav-text">OurCookBook</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<ul id="nav-mobile" class="right hide-on-med-and-down nav-text">
 				<li><a href="{{url_for('recipes_search')}}">Search</a></li>
 				<li><a href="{{url_for('add_recipe')}}">New Recipe</a></li>
 				<li><a href="{{url_for('get_cuisines')}}">Cuisines</a></li>
@@ -36,7 +36,7 @@
 <body>
 
 	<div class="container-fluid tool_bgd">
-		<h4 class="page_header white-text">Choose from the wonderful OurCookBook range</h4>
+		<h4 class="page_header">Choose from the wonderful OurCookBook range</h4>
 		<hr>
 		<div class="container">
 			<div class="carousel carousel-slider center">
@@ -83,6 +83,7 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
                 $('.carousel').carousel();
+                $(".button-collapse").sideNav();
             });
 
             $('.carousel.carousel-slider').carousel({
