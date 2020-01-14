@@ -55,9 +55,9 @@ def update_recipe(recipe_id):
         'recipe_name':request.form.get('recipe_name'),
         'cuisine':request.form.get('cuisine'),
         'main_ingredient': request.form.get('main_ingredient'),
-        'other_ingredient': request.form.get('other_ingredient'),
+        'ing_one': request.form.get('ing_one'),
         'method': request.form.get('method'),
-        'tool':request.form.get('tool')
+        'tool_name':request.form.get('tool')
     })
     return redirect(url_for('get_reecipes'))
 

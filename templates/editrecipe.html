@@ -6,81 +6,182 @@
     <div class="add-background">
         <div class="row">
             <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">poll</i>
-                        <select id="cuisine" name="cuisine_type">
-                            <option value="" disabled selected>Choose Cuisine</option>
-                            {% for cuisine in cuisines %}
-                                {% if cuisine.cuisine_type == cuisine.cuisine_type%}
-                                    <option value="{{cuisine.name}}" selected >{{cuisine.name}}</option>
-                                {% else %}
-                                    <option value="{{cuisine.name}}" >{{cuisine.name}}</option>
-                                {% endif %}
-                            {% endfor %}
-
-                        </select>
-                        <label>Recipe Cuisine</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">poll</i>
-                        <select id="tool" name="tool_name">
-                            <option value="" disabled selected>Choose Tool</option>
-                            {% for tool in tools %}
-                                {% if tool.tool_name == tool.tool_name%}
-                                    <option value="{{tool.tool_name}}" selected >{{tool.tool_name}}</option>
-                                {% else %}
-                                    <option value="{{tool.tool_name}}" >{{tool.tool_name}}</option>
-                                {% endif %}
-                            {% endfor %}
-
-                        </select>
-                        <label>Recipe Cuisine</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">assignment</i>
-                        <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
-                        <label for="icon_prefix">Recipe Name</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12" id="matfix">
-                        <i class="material-icons prefix">today</i>
-                        <input id="season" name="season" type="text" class="datepicker" value="{{recipe.season}}">
-                        <label for="icon_prefix">Season</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <<div class="input-field col s12">
-                        <i class="material-icons prefix">subject</i>
-                        <input id="main_ingredient" name="main_ingredient"  type="text" class="validate" value="{{recipe.main_ingredient}}"></textarea>
-                        <label for="icon_telephone">Main Ingredient</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">subject</i>
-                        <textarea id="other_ingredients" name="other_ingredients" type="text" class="validate" value="{{recipe.other_ingredients}}"></textarea>
-                        <label for="icon_telephone">Other Ingredients</label>
-                    </div>
-                </div>
-
-                <div class="row">
+                <div class="main-item-style">    
+                    <div class="row">
                         <div class="input-field col s12">
-                        <i class="material-icons prefix">subject</i>
-                        <textarea id="method" name="method" id="method" type="text" class="validate" value="{{recipe.method}}"></textarea>
-                        <label for="icon_telephone">Method</label>
+                            <i class="material-icons prefix">insert_comment</i>
+                            <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
+                            <label for="icon_prefix">Recipe Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">language</i>
+                            <select id="cuisine" name="cuisine">
+                                <option value="" disabled selected>Choose Cuisine</option>
+                                {% for cuisine in cuisines %}
+                                    {% if cuisine.name == recipe.cuisine%}
+                                        <option value="{{cuisine.name}}" selected >{{cuisine.name}}</option>
+                                    {% else %}
+                                        <option value="{{cuisine.name}}" >{{cuisine.name}}</option>
+                                    {% endif %}
+                                {% endfor %}
+
+                            </select>
+                            <label>Recipe Cuisine</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">restaurant_menu</i>
+                            <select id="tool" name="tool_name">
+                                <option value="" disabled selected>Choose Tool</option>
+                                {% for tool in tools %}
+                                    {% if tool.tool_name == recipe.tool_name%}
+                                        <option value="{{tool.tool_name}}" selected >{{tool.tool_name}}</option>
+                                    {% else %}
+                                        <option value="{{tool.tool_name}}" >{{tool.tool_name}}</option>
+                                    {% endif %}
+                                {% endfor %}
+
+                            </select>
+                            <label>Kitchen Appliance</label>
+                        </div>
+                    </div>
+
+                    
+                    <div class="row">
+                        <div class="input-field col s12" id="matfix">
+                            <i class="material-icons prefix">today</i>
+                            <input id="season" name="season" type="text" class="datepicker" value="{{recipe.season}}">
+                            <label for="icon_prefix">Season</label>
+                        </div>
                     </div>
                 </div>
+
+                <div class="duration-style">
+                    <div class="row">
+							<h5 class="center">Duration</h5>
+							<div class="input-field col s12 m6 l4">
+								<i class="material-icons prefix">access_time</i>
+								<input id="prep_time" name="prep_time"  type="text" class="validate" value="{{recipe.prep_time}}"></textarea>
+								<label for="icon_telephone">Preperation Time</label>
+							</div>
+							<div class="input-field col s12 m6 l4">
+								<i class="material-icons prefix">access_time</i>
+								<input id="cook_time" name="cook_time"  type="text" class="validate" value="{{recipe.cook_time}}"></textarea>
+								<label for="icon_telephone">Cook Time</label>
+							</div>
+							<div class="input-field col s12 m6 l4">
+								<i class="material-icons prefix">access_time</i>
+								<input id="total_time" name="total_time"  type="text" class="validate" value="{{recipe.total_time}}"></textarea>
+								<label for="icon_telephone">Total Time</label>
+							</div>
+                    </div>
+				</div> 
+
+                <div class="ingredient-style">
+                    <h5 class="center">Ingredients</h5>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">filter_1</i>
+                                <input id="main_ingredient" name="main_ingredient"  type="text" class="validate" value="{{recipe.main_ingredient}}"></textarea>
+                                <label for="icon_telephone">Main Ingredient</label>
+                            </div>                 
+                        
+                            <div class="input-field col s12 m6 l4">
+                                <i class="material-icons prefix">filter_2</i>
+                                <input id="ing_one" name="ing_one"  type="text" class="validate" value="{{recipe.ing_one}}"></textarea>
+                                <label for="icon_telephone">Ingredient 1</label>
+                            </div>                    
+                        
+                            <div class="input-field col s12 m6 l4">
+                                <i class="material-icons prefix">filter_3</i>
+                                <input id="ing_two" name="ing_two"  type="text" class="validate" value="{{recipe.ing_two}}"></textarea>
+                                <label for="icon_telephone">Ingredient 2</label>
+                            </div>                    
+                        
+                            <div class="input-field col s12 m6 l4">
+                                <i class="material-icons prefix">filter_4</i>
+                                <input id="ing_three" name="ing_three"  type="text" class="validate" value="{{recipe.ing_three}}"></textarea>
+                                <label for="icon_telephone">Ingredient 3</label>
+                            </div>    
+
+                            <div class="input-field col s12 m6 l4">
+                                <i class="material-icons prefix">filter_5</i>
+                                <input id="ing_four" name="ing_four"  type="text" class="validate" value="{{recipe.ing_four}}"></textarea>
+                                <label for="icon_telephone">Ingredient 4</label>
+                            </div>                    
+                        
+                            <div class="input-field col s12 m6 l4">
+                                <i class="material-icons prefix">filter_6</i>
+                                <input id="ing_five" name="ing_five"  type="text" class="validate" value="{{recipe.ing_five}}"></textarea>
+                                <label for="icon_telephone">Ingredient 5</label>
+                            </div>                    
+                        
+                            <div class="input-field col s12 m6 l4">
+                                <i class="material-icons prefix">filter_7</i>
+                                <input id="ing_six" name="ing_six"  type="text" class="validate" value="{{recipe.ing_three}}"></textarea>
+                                <label for="icon_telephone">Ingredient 6</label>
+                            </div> 
+
+                            <div class="input-field col s12 m6 l4">
+                                <i class="material-icons prefix">filter_8</i>
+                                <input id="ing_seven" name="ing_seven"  type="text" class="validate" value="{{recipe.ing_seven}}"></textarea>
+                                <label for="icon_telephone">Ingredient 7</label>
+                            </div>                    
+                        
+                            <div class="input-field col s12 m6 l4">
+                                <i class="material-icons prefix">filter_9</i>
+                                <input id="ing_eight" name="ing_eight"  type="text" class="validate" value="{{recipe.ing_eight}}"></textarea>
+                                <label for="icon_telephone">Ingredient 8</label>
+                            </div>  
+                        </div>                              
+                </div>
+
+                <div class="ingredient-style">
+                <h5 class="center">Method</h5>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">filter_1</i>
+                            <input id="step_one" name="step_one"  type="text" class="validate" value="{{recipe.step_one}}"></textarea>
+                            <label for="icon_telephone">Step One</label>
+                        </div>                 
+                    
+                        <div class="input-field col s12 m6 l4">
+                            <i class="material-icons prefix">filter_2</i>
+                            <input id="step_two" name="step_two"  type="text" class="validate" value="{{recipe.step_two}}"></textarea>
+                            <label for="icon_telephone">Step Two</label>
+                        </div>                    
+                    
+                        <div class="input-field col s12 m6 l4">
+                            <i class="material-icons prefix">filter_3</i>
+                            <input id="step_three" name="step_three"  type="text" class="validate" value="{{recipe.step_three}}"></textarea>
+                            <label for="icon_telephone">Step Three</label>
+                        </div>                    
+                    
+                        <div class="input-field col s12 m6 l4">
+                            <i class="material-icons prefix">filter_4</i>
+                            <input id="step_four" name="step_four"  type="text" class="validate" value="{{recipe.step_four}}"></textarea>
+                            <label for="icon_telephone">Step Four</label>
+                        </div>    
+
+                        <div class="input-field col s12 m6 l4">
+                            <i class="material-icons prefix">filter_5</i>
+                            <input id="step_five" name="step_five"  type="text" class="validate" value="{{recipe.step_five}}"></textarea>
+                            <label for="icon_telephone">Step Five</label>
+                        </div>                    
+                    
+                        <div class="input-field col s12 m6 l4">
+                            <i class="material-icons prefix">filter_6</i>
+                            <input id="step_six" name="step_six"  type="text" class="validate" value="{{recipe.step_six}}"></textarea>
+                            <label for="icon_telephone">Step Six</label>
+                        </div>
+                    </div>                                                    
+                </div>  
+
+
 
                 <div class="row center">
                     <button class="btn waves-effect waves-light btn_save" type="submit" name="action">Edit Recipe
