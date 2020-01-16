@@ -13,20 +13,20 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:Jl011187@cluster0-u6mnz.mongodb.ne
 mongo = PyMongo(app)
 
 @app.route('/')
+@app.route('/get_recipes')
+def get_recipes():
+    recipes=mongo.db.recipes.find()
+    # for recipe in recipes:
+    #     print(recipe)
+    return render_template("recipes.html", recipes=recipes)
+
 @app.route('/recipes_search')
 def recipes_search():
-    return render_template("search.html", 
-    cuisines=mongo.db.cuisines.find())
+    return render_template("search.html", cuisines=mongo.db.cuisines.find())
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template("addrecipe.html", 
-    cuisines=mongo.db.cuisines.find(),
-    tools=mongo.db.tools.find())  
-
-@app.route('/get_recipes')
-def get_recipes():
-    return render_template("recipes.html", recipes=mongo.db.recipes.find())
+    return render_template("addrecipe.html", cuisines=mongo.db.cuisines.find(), tools=mongo.db.tools.find())  
 
 @app.route('/cuisine_match', methods=["POST"])
 def cuisine_match():
@@ -39,8 +39,15 @@ def cuisine_match():
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe(): 
     recipes = mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('get_recipes'))        
+    # recipes.insert_one(request.form.to_dict())
+
+    data = request.form.to_dict()
+    data['recipe_name'] = data['recipe_name']
+    data.update({'ingredients': request.form.getlist('ingredients[]')})
+    # Remove the property ingredients[] from the dictionary data
+    del data['ingredients[]']
+    recipes.insert_one(data)
+    return redirect(url_for('get_recipes'))    
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):

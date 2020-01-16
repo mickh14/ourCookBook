@@ -46,6 +46,18 @@
 					</div>
 				</div>
 
+                <!--Ingredients-->
+                <div class="row">
+                    <div class="ingredient-style col s12 m3 l3">
+						<span><strong>Ingredients:</strong></span></br>
+                            <ol>
+                            {% for ingredient in recipe.ingredients %}
+                                <li>{{ ingredient }}</li>
+                            {% endfor %}
+                            </ol>
+                    </div>
+                </div>
+
 				<div class="row">
 					<div class="ingredient-style col s12 m3 l3">
 						<span><strong>Ingredients:</strong></span></br>

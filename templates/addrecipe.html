@@ -1,4 +1,6 @@
-{% extends 'secondary.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 
 		<h4 class="page_header">New Recipe</h4>
 		<hr>
@@ -74,6 +76,29 @@
                     </div>
 				</div> 
 
+                <!--Ingredients-->
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <div class="card background">
+                            <div class="card-content">
+                                <span class="card-title center">Ingredients</span>
+
+                                <div class="addIngredient new-ingredient ingredient">
+                                    <div class="input-field whites-4">
+                                        <input id="ingredients" type="text" placeholder="1 tomato, chopped"
+                                        name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>
+                                    </div>
+                                </div>
+                                
+                                <!-- add button -->
+                                <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+                                <!-- Remove button -->
+                                <a id="remove_ingredient" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 						<div class="ingredient-style">
                             <div class="row">
 							<h5 class="center">Ingredients</h5>
@@ -83,6 +108,7 @@
 								<label for="icon_telephone">Main Ingredient</label>
 							</div>
 
+                            
 
 							<div class="input-field col s12 m6 l3">
 								<i class="material-icons prefix">filter_2</i>
