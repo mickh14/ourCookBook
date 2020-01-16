@@ -5,7 +5,7 @@
 <div class="container">
     <div class="add-background">
         <div class="row">
-            <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+            <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
                 <div class="main-item-style">    
                     <div class="row">
                         <div class="input-field col s12">

@@ -32,7 +32,9 @@ def get_recipes():
 def cuisine_match():
     the_cuisine = request.form['cuisine_name']
     search_recipes = mongo.db.recipes.find({'cuisine': the_cuisine})
-    return render_template("recipes.html", search_recipes=search_recipes)
+    print(the_cuisine)
+    print(search_recipes)
+    return render_template("recipes.html", recipes=search_recipes)
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe(): 
@@ -54,12 +56,28 @@ def update_recipe(recipe_id):
     {
         'recipe_name':request.form.get('recipe_name'),
         'cuisine':request.form.get('cuisine'),
+        'season':request.form.get('season'),
+        'prep_time': request.form.get('prep_time'),
+        'cook_time': request.form.get('cook_time'),
+        'total_time': request.form.get('total_time'),
         'main_ingredient': request.form.get('main_ingredient'),
         'ing_one': request.form.get('ing_one'),
-        'method': request.form.get('method'),
-        'tool_name':request.form.get('tool')
+        'ing_two': request.form.get('ing_two'),
+        'ing_three': request.form.get('ing_three'),
+        'ing_four': request.form.get('ing_four'),
+        'ing_five': request.form.get('ing_five'),
+        'ing_six': request.form.get('ing_six'),
+        'ing_seven': request.form.get('ing_seven'),
+        'ing_eight': request.form.get('ing_eight'),
+        'step_one': request.form.get('step_one'),
+        'step_two': request.form.get('step_two'),
+        'step_three': request.form.get('step_three'),
+        'step_four': request.form.get('step_four'),
+        'step_five': request.form.get('step_five'),
+        'step_six': request.form.get('step_six'),
+        'tool_name':request.form.get('tool_name')
     })
-    return redirect(url_for('get_reecipes'))
+    return redirect(url_for('get_recipes'))
 
 @app.route('/delete_recipe/<recipe_id>')  
 def delete_recipe(recipe_id):
@@ -118,6 +136,10 @@ def update_tool(tool_id):
     {
         'tool_name':request.form.get('tool_name'),
         'tool_description':request.form.get('tool_description'),
+        'tool_cost':request.form.get('tool_cost'),
+        'tool_model':request.form.get('tool_model'),
+        'tool_color':request.form.get('tool_color'),
+        'tool_warranty':request.form.get('tool_warranty'),
         
     })
     return redirect(url_for('get_tools'))
