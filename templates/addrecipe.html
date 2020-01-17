@@ -34,7 +34,7 @@
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="material-icons prefix">restaurant_menu</i>
-							<select id="tool" name="tool_name" size="4" multiple>
+							<select id="tools" name="tools[]" size="4" multiple>
                                     <option value="" disabled selected>Choose Tool</option>
                                     {% for tool in tools %}
                                     <option value="{{tool.tool_name}}">{{tool.tool_name}}</option>
@@ -81,13 +81,13 @@
 				<div class="ingredient-style">
 					<div class="row">
 						<h5 class="center">Ingredients</h5>
-                        <!--Main Ingredients-->
+						<!--Main Ingredients-->
 						<div class="input-field col s12">
 							<i class="material-icons prefix">filter_1</i>
 							<textarea name="main_ingredient" id="main_ingredient" class="materialize-textarea"></textarea>
 							<label for="icon_telephone">Main Ingredient</label>
 						</div>
-                        <!--Others Ingredients will be stored in an array-->
+						<!--Others Ingredients will be stored in an array-->
 						<div class="row">
 							<div class="col s10 offset-s1">
 								<div class="card background">
@@ -99,7 +99,8 @@
 												<input id="ingredients" type="text" placeholder="1 tomato, chopped"
                                                 name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>
                                             </div>
-										</div>
+                                            </div>
+											
 
 											<!-- add button -->
 											<a id="add_ingredient"
@@ -114,36 +115,36 @@
 						</div>
 					</div>
 
-                    <!--Enter Method-->
-                    <div class="method-style">
+					<!--Enter Method-->
+					<div class="method-style">
 						<div class="row">
 							<h5 class="center">Method</h5>
-                            <div class="row">
-                                <div class="col s10 offset-s1">
-                                    <div class="card background">
-                                        <div class="card-content">
-                                            <span class="card-title center">Enter Steps</span>
+							<div class="row">
+								<div class="col s10 offset-s1">
+									<div class="card background">
+										<div class="card-content">
+											<span class="card-title center">Enter Steps</span>
 
-                                            <div class="addStep new-step step">
-                                                <div class="input-field whites-4">
-                                                    <input id="steps" type="text" placeholder="Enter step details"
+											<div class="addStep new-step step">
+												<div class="input-field whites-4">
+													<input id="steps" type="text" placeholder="Enter step details"
                                                     name="steps[]" class="steps validate" minlength="1" maxlength="100" required>
                                                 </div>
-                                            </div>
-
-                                                <!-- add button -->
-                                                <a id="add_step"
-                                                    class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
-                                                <!-- Remove button -->
-                                                <a id="remove_step"
-                                                    class="btn waves-effect waves-light red lighten-2"><i class="material-icons">remove</i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-						    </div>
+                                                </div>
+												
+												<!-- add button -->
+												<a id="add_step"
+													class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+												<!-- Remove button -->
+												<a id="remove_step"
+													class="btn waves-effect waves-light red lighten-2"><i class="material-icons">remove</i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-                    </div>        
+					</div>
 
 					<div class="row center">
 						<button class="btn waves-effect waves-light add-button" type="submit" name="action">Add Recipe

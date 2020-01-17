@@ -44,10 +44,12 @@ def insert_recipe():
     data = request.form.to_dict()
     data['recipe_name'] = data['recipe_name']
     data.update({'ingredients': request.form.getlist('ingredients[]')})  
-    data.update({'steps': request.form.getlist('steps[]')})   
+    data.update({'steps': request.form.getlist('steps[]')})
+    data.update({'tools': request.form.getlist('tools[]')})    
     # Remove the property ingredients[] and steps[] from the dictionary data
     del data['ingredients[]']
-    del data['steps[]']  
+    del data['steps[]']
+    del data['tools[]']  
     recipes.insert_one(data)
     return redirect(url_for('get_recipes'))    
 
@@ -156,10 +158,10 @@ def insert_tool():
 def add_tool():
     return render_template('addtool.html')
 
-@app.route('/buy_tool')
-def buy_tool():
+@app.route('/buy_tool/<tool_id>')
+def buy_tool(tool_id):
     return render_template('buytool.html',
-    tools=mongo.db.tools.find())
+    tools=mongo.db.tools.find_one({'_id': ObjectId(tool_id)}))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

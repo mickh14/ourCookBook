@@ -146,6 +146,10 @@ ul#menu li {
   display:inline;
 }
 
+ul#tools li {
+  display:inline;
+}
+
 .social-links li a i {
     width: 32px;
     height: 32px;
