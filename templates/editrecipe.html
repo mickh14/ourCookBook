@@ -91,121 +91,64 @@
                                 <input id="main_ingredient" name="main_ingredient"  type="text" class="validate" value="{{recipe.main_ingredient}}"></textarea>
                                 <label for="icon_telephone">Main Ingredient</label>
                             </div>                 
-                        
-                            <div class="input-field col s12 m6 l4">
-                                <i class="material-icons prefix">filter_2</i>
-                                <input id="ing_one" name="ing_one"  type="text" class="validate" value="{{recipe.ing_one}}"></textarea>
-                                <label for="icon_telephone">Ingredient 1</label>
-                            </div>                    
-                        
-                            <div class="input-field col s12 m6 l4">
-                                <i class="material-icons prefix">filter_3</i>
-                                <input id="ing_two" name="ing_two"  type="text" class="validate" value="{{recipe.ing_two}}"></textarea>
-                                <label for="icon_telephone">Ingredient 2</label>
-                            </div>                    
-                        
-                            <div class="input-field col s12 m6 l4">
-                                <i class="material-icons prefix">filter_4</i>
-                                <input id="ing_three" name="ing_three"  type="text" class="validate" value="{{recipe.ing_three}}"></textarea>
-                                <label for="icon_telephone">Ingredient 3</label>
-                            </div>    
 
-                            <div class="input-field col s12 m6 l4">
-                                <i class="material-icons prefix">filter_5</i>
-                                <input id="ing_four" name="ing_four"  type="text" class="validate" value="{{recipe.ing_four}}"></textarea>
-                                <label for="icon_telephone">Ingredient 4</label>
-                            </div>                    
-                        
-                            <div class="input-field col s12 m6 l4">
-                                <i class="material-icons prefix">filter_6</i>
-                                <input id="ing_five" name="ing_five"  type="text" class="validate" value="{{recipe.ing_five}}"></textarea>
-                                <label for="icon_telephone">Ingredient 5</label>
-                            </div>                    
-                        
-                            <div class="input-field col s12 m6 l4">
-                                <i class="material-icons prefix">filter_7</i>
-                                <input id="ing_six" name="ing_six"  type="text" class="validate" value="{{recipe.ing_three}}"></textarea>
-                                <label for="icon_telephone">Ingredient 6</label>
-                            </div> 
+                             <!--Ingredients-->
+                            <div class="row">
+                                <div class="col s10 offset-s1">
+                                    <div class="card background">
+                                        <div class="card-content">
+                                            <span class="card-title center">Ingredients</span>
 
-                            <div class="input-field col s12 m6 l4">
-                                <i class="material-icons prefix">filter_8</i>
-                                <input id="ing_seven" name="ing_seven"  type="text" class="validate" value="{{recipe.ing_seven}}"></textarea>
-                                <label for="icon_telephone">Ingredient 7</label>
-                            </div>                    
-                        
-                            <div class="input-field col s12 m6 l4">
-                                <i class="material-icons prefix">filter_9</i>
-                                <input id="ing_eight" name="ing_eight"  type="text" class="validate" value="{{recipe.ing_eight}}"></textarea>
-                                <label for="icon_telephone">Ingredient 8</label>
-                            </div>  
-                        </div>                              
-                </div>
+                                            <div class="addIngredient new-ingredient ingredient">
+                                                <div class="input-field whites-4">
+                                                    {% for ingredient in recipe.ingredients %}
+                                                    <textarea id="ingredients" placeholder="200g Butter" name="ingredients[]" class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required>{{ ingredient }}</textarea>
+                                                    <!--   <input id="ingredients" type="text" placeholder="200g Butter" name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>{{ recipe.ingredients }}
+                                            -->
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
 
-                <!--Ingredients-->
-                <div class="row">
-                    <div class="col s10 offset-s1">
-                        <div class="card background">
-                            <div class="card-content">
-                                <span class="card-title center">Ingredients</span>
-
-                                <div class="addIngredient new-ingredient ingredient">
-                                    <div class="input-field whites-4">
-                                        {% for ingredient in recipe.ingredients %}
-                                        <textarea id="ingredients" placeholder="200g Butter" name="ingredients[]" class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required>{{ ingredient }}</textarea>
-                                        <!--   <input id="ingredients" type="text" placeholder="200g Butter" name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>{{ recipe.ingredients }}
-                                -->
-                                        {% endfor %}
+                                            <!-- add button -->
+                                            <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+                                            <!-- Remove button -->
+                                            <a id="remove_ingredient" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <!-- add button -->
-                                <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
-                                <!-- Remove button -->
-                                <a id="remove_ingredient" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
                             </div>
-                        </div>
-                    </div>
+                            
+                        </div>                              
                 </div>
 
                 <div class="ingredient-style">
                 <h5 class="center">Method</h5>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">filter_1</i>
-                            <input id="step_one" name="step_one"  type="text" class="validate" value="{{recipe.step_one}}"></textarea>
-                            <label for="icon_telephone">Step One</label>
-                        </div>                 
-                    
-                        <div class="input-field col s12 m6 l4">
-                            <i class="material-icons prefix">filter_2</i>
-                            <input id="step_two" name="step_two"  type="text" class="validate" value="{{recipe.step_two}}"></textarea>
-                            <label for="icon_telephone">Step Two</label>
-                        </div>                    
-                    
-                        <div class="input-field col s12 m6 l4">
-                            <i class="material-icons prefix">filter_3</i>
-                            <input id="step_three" name="step_three"  type="text" class="validate" value="{{recipe.step_three}}"></textarea>
-                            <label for="icon_telephone">Step Three</label>
-                        </div>                    
-                    
-                        <div class="input-field col s12 m6 l4">
-                            <i class="material-icons prefix">filter_4</i>
-                            <input id="step_four" name="step_four"  type="text" class="validate" value="{{recipe.step_four}}"></textarea>
-                            <label for="icon_telephone">Step Four</label>
-                        </div>    
+                        <!--Steps-->
+                            <div class="row">
+                                <div class="col s10 offset-s1">
+                                    <div class="card background">
+                                        <div class="card-content">
+                                            <span class="card-title center">Steps</span>
 
-                        <div class="input-field col s12 m6 l4">
-                            <i class="material-icons prefix">filter_5</i>
-                            <input id="step_five" name="step_five"  type="text" class="validate" value="{{recipe.step_five}}"></textarea>
-                            <label for="icon_telephone">Step Five</label>
-                        </div>                    
-                    
-                        <div class="input-field col s12 m6 l4">
-                            <i class="material-icons prefix">filter_6</i>
-                            <input id="step_six" name="step_six"  type="text" class="validate" value="{{recipe.step_six}}"></textarea>
-                            <label for="icon_telephone">Step Six</label>
-                        </div>
+                                            <div class="addStep new-step step">
+                                                <div class="input-field whites-4">
+                                                    {% for step in recipe.steps %}
+                                                    <textarea id="steps" placeholder="Enter step" name="steps[]" class="materialize-textarea steps validate" minlength="3" maxlength="200" required>{{ step }}</textarea>
+                                                    <!--   <input id="ingredients" type="text" placeholder="200g Butter" name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>{{ recipe.ingredients }}
+                                            -->
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+
+                                            <!-- add button -->
+                                            <a id="add_step" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+                                            <!-- Remove button -->
+                                            <a id="remove_step" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>                                                    
                 </div>  
 
@@ -215,7 +158,7 @@
                     <button class="btn waves-effect waves-light btn_save" type="submit" name="action">Edit Recipe
                         <i class="material-icons right">playlist_add</i>
                     </button>
-                    <a href="{{ url_for('get_cuisines') }}" class="waves-effect waves-light btn grey">
+                    <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn grey">
                         <i class="material-icons right">cancel</i>Cancel
                     </a>
                 </div>

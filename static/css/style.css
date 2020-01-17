@@ -11,28 +11,24 @@
 
 .add-button{
     background-color: rgba(142, 124, 157, 0.66);
-    border-radius: 40px;
     border: 2px solid black; 
     margin-bottom: 10px
 }
 
 .btn_remove{
     background-color: rgba(239, 93, 77, 0.91);
-    border-radius: 40px;
     color: white;
     margin-bottom: 10px
 }
 
 .btn_edit{
     background-color: rgba(51, 56, 117, 0.91);
-    border-radius: 40px;
     color: white;
     margin-bottom: 10px
 }
 
 .btn_buy{
     background-color: hsla(158, 8%, 63%, 0.91);
-    border-radius: 40px;
     color: white;
     margin-bottom: 10px
 }
@@ -106,7 +102,8 @@ h5{
 }
 /*-----------------Nav Style*/
 .nav_style{
-    background: hsla(36, 56%, 78%, 0.54); 
+    background: #a5732a8a; 
+    
 }
 
 .nav-text{
@@ -131,4 +128,44 @@ h5{
     background: rgba(33, 29, 29, 0.42);
 }
 
-/*-----------------view Recipe Style*/
+/*-----------------footer*/
+
+.footerstyle {
+    background-color: #a5732a8a;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    color: #fff;
+}
+
+
+.social-links {
+    padding-bottom: 15px;
+}
+
+ul#menu li {
+  display:inline;
+}
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: #fafafa;
+    background-color: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background-color: #e84610;
+}
+
+.modal-style{
+    background-color: grey;
+}

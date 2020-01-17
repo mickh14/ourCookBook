@@ -43,9 +43,11 @@ def insert_recipe():
 
     data = request.form.to_dict()
     data['recipe_name'] = data['recipe_name']
-    data.update({'ingredients': request.form.getlist('ingredients[]')})
-    # Remove the property ingredients[] from the dictionary data
+    data.update({'ingredients': request.form.getlist('ingredients[]')})  
+    data.update({'steps': request.form.getlist('steps[]')})   
+    # Remove the property ingredients[] and steps[] from the dictionary data
     del data['ingredients[]']
+    del data['steps[]']  
     recipes.insert_one(data)
     return redirect(url_for('get_recipes'))    
 
@@ -68,21 +70,8 @@ def update_recipe(recipe_id):
         'cook_time': request.form.get('cook_time'),
         'total_time': request.form.get('total_time'),
         'main_ingredient': request.form.get('main_ingredient'),
-        'ing_one': request.form.get('ing_one'),
-        'ing_two': request.form.get('ing_two'),
-        'ing_three': request.form.get('ing_three'),
-        'ing_four': request.form.get('ing_four'),
-        'ing_five': request.form.get('ing_five'),
-        'ing_six': request.form.get('ing_six'),
-        'ing_seven': request.form.get('ing_seven'),
-        'ing_eight': request.form.get('ing_eight'),
-        'step_one': request.form.get('step_one'),
-        'step_two': request.form.get('step_two'),
-        'step_three': request.form.get('step_three'),
-        'step_four': request.form.get('step_four'),
-        'step_five': request.form.get('step_five'),
-        'step_six': request.form.get('step_six'),
-        'tool_name':request.form.get('tool_name')
+        'ingredients': request.form.getlist('ingredients[]'),
+        'steps': request.form.getlist('steps[]')
     })
     return redirect(url_for('get_recipes'))
 

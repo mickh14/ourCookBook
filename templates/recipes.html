@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% import 'components.html' as components %}
+
 {% block content %}
 <h4 class="page_header">Recipies</h4>
 <hr>
@@ -47,41 +47,24 @@
 				</div>
 
                 <!--Ingredients-->
-                <div class="row">
-                    <div class="ingredient-style col s12 m3 l3">
-						<span><strong>Ingredients:</strong></span></br>
-                            <ol>
-                            {% for ingredient in recipe.ingredients %}
-                                <li>{{ ingredient }}</li>
-                            {% endfor %}
-                            </ol>
-                    </div>
-                </div>
-
+                
 				<div class="row">
 					<div class="ingredient-style col s12 m3 l3">
 						<span><strong>Ingredients:</strong></span></br>
                             <ol>
                                 <li>{{recipe.main_ingredient}}</li>
-                                <li>{{recipe.ing_one}}</span></li>
-                                <li>{{recipe.ing_two}}</span></li>
-                                <li>{{recipe.ing_three}}</span></li>
-                                <li>{{recipe.ing_four}}</span></li>
-                                <li>{{recipe.ing_five}}</span></li>
-                                <li>{{recipe.ing_six}}</span></li>
-                                <li>{{recipe.ing_seven}}</span></li>
-                                <li>{{recipe.ing_eight}}</span></li>
+                                {% for ingredient in recipe.ingredients %}
+                                    <li>{{ ingredient }}</li>
+                                {% endfor %}    
                             </ol>
                     </div>
+                    
                     <div class="method-style col s12 m9 l9">
                         <strong>Method:</strong></br>
                             <ul>
-                                <li><strong>Step 1:</strong> {{recipe.step_one}}</li></br>
-                                <li><strong>Step 2:</strong> {{recipe.step_two}}</span></li></br>
-                                <li><strong>Step 3:</strong> {{recipe.step_three}}</span></li></br>
-                                <li><strong>Step 4:</strong> {{recipe.step_four}}</span></li></br>
-                                <li><strong>Step 5:</strong> {{recipe.step_five}}</span></li></br>
-                                <li><strong>Step 6:</strong> {{recipe.step_six}}</span></li></br>
+                                {% for step in recipe.steps %}
+                                    <li>{{ step }}</li>
+                                {% endfor %}    
                             </ul>
                     </div>
                 </div>

@@ -15,4 +15,21 @@ $(document).ready(() => {
             ingredientField-= 1;
         }
     });
+
+    var stepField = $(".step").length;
+    $("#add_step").on("click", function () {
+        // $("select").formSelect("destroy");
+        $(".new-step:first").clone().insertBefore("#add_step").find("input[type='text'], select, textarea").val("");
+        // $("select").formSelect();
+        stepField += 1;
+    });
+
+    $("#remove_step").on("click", function () {
+        if (stepField > 1) {
+            /* only remove the :last item */
+            $(this).siblings(".new-step:last").remove();
+            /* ensure original ingredient line never gets deleted */
+            stepField-= 1;
+        }
+    });
 });
