@@ -35,22 +35,17 @@
                     </div>
 
                     <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">restaurant_menu</i>
-                            <select id="tool" name="tool_name">
-                                <option value="" disabled selected>Choose Tool</option>
-                                {% for tool in tools %}
-                                    {% if tool.tool_name == recipe.tool_name%}
-                                        <option value="{{tool.tool_name}}" selected >{{tool.tool_name}}</option>
-                                    {% else %}
-                                        <option value="{{tool.tool_name}}" >{{tool.tool_name}}</option>
-                                    {% endif %}
-                                {% endfor %}
-
-                            </select>
-                            <label>Kitchen Appliance</label>
-                        </div>
-                    </div>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">restaurant_menu</i>
+							<select id="tools" name="tools[]" size="4" multiple>
+                                    <option value="" disabled selected>Choose Tool</option>
+                                    {% for tool in tools %}
+                                    <option value="{{tool.tool_name}}">{{tool.tool_name}}</option>
+                                    {% endfor %}
+    
+                                </select>
+							<label>Kitchen Tool</label>
+						</div>
 
                     
                     <div class="row">

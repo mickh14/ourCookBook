@@ -73,7 +73,8 @@ def update_recipe(recipe_id):
         'total_time': request.form.get('total_time'),
         'main_ingredient': request.form.get('main_ingredient'),
         'ingredients': request.form.getlist('ingredients[]'),
-        'steps': request.form.getlist('steps[]')
+        'steps': request.form.getlist('steps[]'),
+        'tools': request.form.getlist('tools[]')
     })
     return redirect(url_for('get_recipes'))
 
@@ -158,10 +159,10 @@ def insert_tool():
 def add_tool():
     return render_template('addtool.html')
 
-@app.route('/buy_tool/<tool_id>')
-def buy_tool(tool_id):
+@app.route('/buy_tool')
+def buy_tool():
     return render_template('buytool.html',
-    tools=mongo.db.tools.find_one({'_id': ObjectId(tool_id)}))
+    tools=mongo.db.tools.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
