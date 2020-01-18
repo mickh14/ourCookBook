@@ -1,35 +1,31 @@
 $(document).ready(() => {
-    var ingredientField = $(".ingredient").length;
+    var ingredients = $(".ingredient").length;
     $("#add_ingredient").on("click", function () {
-        // $("select").formSelect("destroy");
-        $(".new-ingredient:first").clone().insertBefore("#add_ingredient").find("input[type='text'], select, textarea").val("");
-        // $("select").formSelect();
-        ingredientField += 1;
+        $(".ingredient:first").clone().insertBefore("#add_ingredient").find("textarea").val("");
+        ingredients += 1;
     });
 
     $("#remove_ingredient").on("click", function () {
-        if (ingredientField > 1) {
+        if (ingredients > 1) {
             /* only remove the :last item */
-            $(this).siblings(".new-ingredient:last").remove();
+            $(this).siblings(".ingredient:last").remove();
             /* ensure original ingredient line never gets deleted */
-            ingredientField-= 1;
+            ingredients -= 1;
         }
     });
 
-    var stepField = $(".step").length;
+    var steps = $(".step").length;
     $("#add_step").on("click", function () {
-        // $("select").formSelect("destroy");
-        $(".new-step:first").clone().insertBefore("#add_step").find("input[type='text'], select, textarea").val("");
-        // $("select").formSelect();
-        stepField += 1;
+        $(".step:first").clone().insertBefore("#add_step").find("textarea").val("");
+        steps += 1;
     });
 
     $("#remove_step").on("click", function () {
-        if (stepField > 1) {
+        if (steps > 1) {
             /* only remove the :last item */
-            $(this).siblings(".new-step:last").remove();
+            $(this).siblings(".step:last").remove();
             /* ensure original ingredient line never gets deleted */
-            stepField-= 1;
+            steps -= 1;
         }
     });
 });

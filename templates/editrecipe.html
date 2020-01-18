@@ -94,15 +94,13 @@
                                         <div class="card-content">
                                             <span class="card-title center">Ingredients</span>
 
-                                            <div class="addIngredient new-ingredient ingredient">
+                                            {% for ingredient in recipe.ingredients %}
+                                            <div class="ingredient">
                                                 <div class="input-field whites-4">
-                                                    {% for ingredient in recipe.ingredients %}
-                                                    <textarea id="ingredients" placeholder="200g Butter" name="ingredients[]" class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required>{{ ingredient }}</textarea>
-                                                    <!--   <input id="ingredients" type="text" placeholder="200g Butter" name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>{{ recipe.ingredients }}
-                                            -->
-                                                    {% endfor %}
+                                                    <textarea placeholder="200g Butter" name="ingredients[]" class="materialize-textarea ingredient-input validate" minlength="3" maxlength="200" required>{{ ingredient }}</textarea>
                                                 </div>
                                             </div>
+                                            {% endfor %}
 
                                             <!-- add button -->
                                             <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
@@ -126,15 +124,13 @@
                                         <div class="card-content">
                                             <span class="card-title center">Steps</span>
 
-                                            <div class="addStep new-step step">
+                                            {% for step in recipe.steps %}
+                                            <div class="step">
                                                 <div class="input-field whites-4">
-                                                    {% for step in recipe.steps %}
-                                                    <textarea id="steps" placeholder="Enter step" name="steps[]" class="materialize-textarea steps validate" minlength="3" maxlength="200" required>{{ step }}</textarea>
-                                                    <!--   <input id="ingredients" type="text" placeholder="200g Butter" name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>{{ recipe.ingredients }}
-                                            -->
-                                                    {% endfor %}
+                                                    <textarea placeholder="Enter step" name="steps[]" class="materialize-textarea step-input validate" minlength="3" maxlength="200" required>{{ step }}</textarea>
                                                 </div>                                                
                                             </div>
+                                            {% endfor %}
 
                                             <!-- add button -->
                                             <a id="add_step" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
@@ -162,11 +158,13 @@
         </div>
     </div>            
 </div>
+{% endblock %}
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        due_date = Date.parse('{{recipe.due_date}}')
-        $('#due_date').pickadate('picker').set('select', due_date, { format: 'dd/mm/yyyy'}).trigger('change')
-    });
-</script>
+{% block script %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            due_date = Date.parse('{{recipe.due_date}}')
+            $('#due_date').pickadate('picker').set('select', due_date, { format: 'dd/mm/yyyy'}).trigger('change')
+        });
+    </script>
 {% endblock %}

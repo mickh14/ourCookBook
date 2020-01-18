@@ -26,28 +26,40 @@
 
 			</div>
 			<div class="collapsible-body">
-				<div class="row ingredient-style center">
-                    <strong>Required Tools</strong></br>					
-					<ul id="tools">
-						{% for tool in recipe.tools %}
-						<div class="col s12 m6 l4">
-							<div class="card card-bgd">
-								<div class="card-content white-text center">
-                                    <i class="fas fa-utensils" aria-hidden="true"></i>
-									<span class="card-title">{{tool}}</span>
+
+				<div class="row center">
+					<form action="{{ url_for('one_tool')}}" method="POST" class="col s12">
+						<div class="row center">
+
+							{% for tool in recipe.tools %}
+
+							<div class="col s12 m4 l4">
+								<div class="card card-bgd">
+									<div class="card-content white-text center">
+										<span class="card-title">{{tool}}</span>
+									</div>
+									<div class="row">
+										<div class="input-field col s12">
+											<input hidden value="{{tool}}" id="tool_name" name="tool_name" type="text" class="validate">
+										</div>
+									</div>
+									<div class="center">
+										<button class="waves-effect waves-light btn_edit center btn_small" type="submit" name="action">Buy
+										<i class="material-icons right">playlist_add</i>
+										</button>
+									</div>
 								</div>
 							</div>
+
+							{% endfor %}
 						</div>
-						{% endfor %}
-					</ul>                       
+
+					</form>
 				</div>
-                <div class=" row center">
-					<a target="_blank" href="{{url_for('buy_tool')}}"
-							class="waves-effect waves-light btn_edit center">See the full OurCookBook range</a>
-				</div> 
+
 
 				<div class="row duration-style center">
-                    <strong>Duration</strong></br>
+					<strong>Duration:</strong></br>
 					<div class="col s6 m16 l4 center">
 						<i class="material-icons prefix">access_time</i>
 						<p>Preperation: {{recipe.prep_time}} minutes</p>

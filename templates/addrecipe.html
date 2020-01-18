@@ -39,7 +39,6 @@
                                     {% for tool in tools %}
                                     <option value="{{tool.tool_name}}">{{tool.tool_name}}</option>
                                     {% endfor %}
-
                                 </select>
 							<label>Kitchen Tool</label>
 						</div>
@@ -77,7 +76,6 @@
 				</div>
 
 				<!--Enter Ingredients-->
-
 				<div class="ingredient-style">
 					<div class="row">
 						<h5 class="center">Ingredients</h5>
@@ -94,68 +92,58 @@
 									<div class="card-content">
 										<span class="card-title center">Ingredients</span>
 
-										<div class="addIngredient new-ingredient ingredient">
-											<div class="input-field whites-4">
-												<input id="ingredients" type="text" placeholder="1 tomato, chopped"
-                                                name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>
+                                        <div class="ingredient">
+                                            <div class="input-field whites-4">
+                                                <textarea placeholder="200g Butter" name="ingredients[]" class="materialize-textarea ingredient-input validate" minlength="1" maxlength="100" required>{{ ingredient }}</textarea>
                                             </div>
-                                            </div>
-											
+                                        </div>
 
-											<!-- add button -->
-											<a id="add_ingredient"
-												class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
-											<!-- Remove button -->
-											<a id="remove_ingredient"
-												class="btn waves-effect waves-light red lighten-2"><i class="material-icons">remove</i></a>
-										</div>
+                                        <!-- add button -->
+                                        <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+                                        <!-- Remove button -->
+                                        <a id="remove_ingredient" class="btn waves-effect waves-light red lighten-2"><i class="material-icons">remove</i></a>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-					<!--Enter Method-->
-					<div class="method-style">
-						<div class="row">
-							<h5 class="center">Method</h5>
-							<div class="row">
-								<div class="col s10 offset-s1">
-									<div class="card background">
-										<div class="card-content">
-											<span class="card-title center">Enter Steps</span>
+                <!--Enter Method-->
+                <div class="method-style">
+                    <div class="row">
+                        <h5 class="center">Method</h5>
+                        <div class="row">
+                            <div class="col s10 offset-s1">
+                                <div class="card background">
+                                    <div class="card-content">
+                                        <span class="card-title center">Enter Steps</span>
 
-											<div class="addStep new-step step">
-												<div class="input-field whites-4">
-													<input id="steps" type="text" placeholder="Enter step details"
-                                                    name="steps[]" class="steps validate" minlength="1" maxlength="1000" required>
-                                                </div>
-                                                </div>
-												
-												<!-- add button -->
-												<a id="add_step"
-													class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
-												<!-- Remove button -->
-												<a id="remove_step"
-													class="btn waves-effect waves-light red lighten-2"><i class="material-icons">remove</i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+                                        <div class="step">
+                                            <div class="input-field whites-4">
+                                                <textarea placeholder="Enter step" name="steps[]" class="materialize-textarea step-input validate" minlength="3" maxlength="200" required>{{ step }}</textarea>
+                                            </div>                                                
+                                        </div>
 
-					<div class="row center">
-						<button class="btn waves-effect waves-light add-button" type="submit" name="action">Add Recipe
-                            <i class="material-icons right">playlist_add</i>
-                    </button>
-					</div>
+                                        <!-- add button -->
+                                        <a id="add_step" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+                                        <!-- Remove button -->
+                                        <a id="remove_step" class="btn waves-effect waves-light red lighten-2"><i class="material-icons">remove</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="row center">
+                    <button class="btn waves-effect waves-light add-button" type="submit" name="action">Add Recipe
+        <i class="material-icons right">playlist_add</i>
+    </button>
+                </div>
 			</form>
 		</div>
 	</div>
-</div>
 </div>
 
 {% endblock %}
