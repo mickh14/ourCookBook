@@ -109,7 +109,7 @@ The database is made up of the following collections.
 
 **cuisines**
 
-- id: \&lt;ObjectId()\&gt;
+- id: <ObjectId()>
 - name: \&lt;string\&gt;
 
 **tools**
