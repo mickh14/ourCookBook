@@ -188,6 +188,7 @@ def buy_tool():
     return render_template('buytool.html',
                            tools=mongo.db.tools.find())
 
+
 @app.route('/one_tool', methods=["POST"])
 def one_tool():
     the_tool = request.form['tool_name']

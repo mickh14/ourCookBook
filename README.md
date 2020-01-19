@@ -1,7 +1,10 @@
 **OurCookBook**
 
- 
+
+
 **Business Goal** : To deliver an easy to use website that will allow users to create, edit and easily view cook recipes. The recipes should be displayed in a visually appealing and user-friendly way. The site should also promote Cookbook kitchen tool brand.
+
+Vist [OurCook](https://out-cook-book.herokuapp.com/get_recipes)[Book](https://out-cook-book.herokuapp.com/get_recipes)
 
 **Table of Contents**
 
@@ -83,8 +86,6 @@ For Javascript, I mainly used Jquery
 
 Flask is the micro web framework that runs the application
 
-
-
 **Database:**
 
 I used Mongo DB for the DB, the entity relation diagram can be seen [here](https://github.com/mickh14/ourCookBook/blob/master/documentation/Entity%20Relationship.xlsx)
@@ -128,7 +129,7 @@ The database is made up of the following collections.
 
 **Colour Scheme and Typography:**
 
-I have gone with a simple colour scheme. Most colours are see true to allow the backgrounds add to the website.
+I have gone with a simple colour scheme. Most colours are transparent to allow the backgrounds add to the website.
 
 Garamond was used for the font headings and navigation elements
 
@@ -208,26 +209,24 @@ Garamond was used for the font headings and navigation elements
 The below HTML pages will provide views for ease of use of the Cook Book website:
 
 - BASE: A template for all other pages to use
-- Search – User can enter a cuisine and retrieve all recipes of that cuisine type from the DB
+- [Search](https://out-cook-book.herokuapp.com/recipes_search) – User can enter a cuisine and retrieve all recipes of that cuisine type from the DB
   - Landing page when website opens and can also be access via link in Navbar
-- Recipes – Displays all recipes that are retrieved from the DB
+- [Recipes](https://out-cook-book.herokuapp.com/get_recipes) – Displays all recipes that are retrieved from the DB
   - Displayed as a result of search
-- Cuisines – Displays all cuisines that are retrieved from the DB
+- [Cuisines](https://out-cook-book.herokuapp.com/get_cuisines) – Displays all cuisines that are retrieved from the DB
   - Access via link on navbar
-- Tools – Displays all tools that are retrieved from the DB
+- [Buytools](https://out-cook-book.herokuapp.com/buy_tool) – Displays all tools that are retrieved from the DB
+  - Accessed via Buy button on recipe or Shop link on navbar
+- [Addrecipe](https://out-cook-book.herokuapp.com/add_recipe) – Allows use to enter a new recipe details and send to DB
   - Accessed via link on navbar
-- Addrecipe – Allows use to enter a new recipe details and send to DB
-  - Accessed via link on navbar
-- Addcuisine - Allows use to enter a new cuisine details and send to DB
+- [Addcuisine](https://out-cook-book.herokuapp.com/add_cuisine) - Allows use to enter a new cuisine details and send to DB
   - Access via &quot;Add Cuisine&quot; button on cuisines page
-- Addtool- Allows use to enter a new tool details and send to DB
-  - Access via &quot;Add Tool&quot; button on tools page
-- Eidtrecipe – Allows a user to update and existing recipe
+- [Eidtrecipe](https://out-cook-book.herokuapp.com/edit_recipe/5e21eaacae463ebca8664ed0) – Allows a user to update and existing recipe
   - Access via &quot;edit&quot; button on recipes page
-- editcuisine– Allows a user to update and existing cuisine
+- [editcuisine](https://out-cook-book.herokuapp.com/edit_cuisine/5e175cb17efa136052fd4ca9)– Allows a user to update and existing cuisine
   - Access via &quot;edit&quot; button on cuisine page
-- edittool– Allows a user to update and existing tool
-  - Access via &quot;edit&quot; button on tools page
+
+
 
 **CRUD**
 
@@ -274,14 +273,13 @@ The below HTML pages will provide views for ease of use of the Cook Book website
 
 - [**GITPOD**](https://gitpod.io/workspaces/) **is the IDE I used to put the project together**
 - [**MongoDB Atlas**](https://www.mongodb.com/cloud/atlas) is used to store my database in the &#39;cloud&#39;
-- [**Git**](https://gist.github.com/derhuerst/1b15ff4652a867391f03) is used for version control
-- [**GitHub**](https://github.com/) provides hosting for software development version control using Git
+- [**GitHub**](https://github.com/mickh14/ourCookBook/blob/master/documentation/Entity%20Relationship.xlsx)[ ](https://github.com/mickh14/ourCookBook/blob/master/documentation/Entity%20Relationship.xlsx)provides hosting for software development version control using Git
 - [**Balsamiq**](https://balsamiq.com/) was used to create the wireframes when initially planning this project
 - [**Am I Responsive**](http://ami.responsivedesign.is/) to create the images in this readme file
 
 #### Hosting
 
-- [**Heroku**](https://github.com/stephyraju/spiceworld/blob/master) is used to host the app
+- [**Heroku**](https://dashboard.heroku.com/apps/out-cook-book) is used to host the app
 
 ### Testing
 
