@@ -95,37 +95,37 @@ The database is made up of the following collections.
 **Recipes**
 
 - id: <ObjectId()>
-- recipe\_name: <string>
-- cuisine: \&lt;string\&gt;
-- season: \&lt;string\&gt;
-- prep\_time: \&lt;string\&gt;
-- cook\_time: \&lt;string\&gt;
-- total\_time: \&lt;string\&gt;
-- main\_ingredient: \&lt;string\&gt;
-- ingredients: \&lt;array\&gt;
-- steps: \&lt;array\&gt;
-- tools: \&lt;array\&gt;
+- recipe\_name 
+- cuisine
+- season
+- prep\_time
+- cook\_time
+- total\_time
+- main\_ingredient
+- ingredients
+- steps
+- tools
 -
 
 **cuisines**
 
 - id: <ObjectId()>
-- name: \&lt;string\&gt;
+- name: 
 
 **tools**
 
-- id: \&lt;ObjectId()\&gt;
-- tool\_name: \&lt;string\&gt;
-- tool\_description: \&lt;string\&gt;
-- tool\_cost: \&lt;string\&gt;
-- tool\_model: \&lt;string\&gt;
-- tool\_color: \&lt;string\&gt;
-- tool\_warranty: \&lt;string\&gt;
+- id: <ObjectId()>
+- tool\_name
+- tool\_description
+- tool\_cost
+- tool\_model
+- tool\_color
+- tool\_warranty
 
 **main\_ingredient**
 
-- id: \&lt;ObjectId()\&gt;
-- name: \&lt;string\&gt;
+- id
+- name
 
 **Colour Scheme and Typography:**
 
