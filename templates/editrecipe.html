@@ -5,21 +5,21 @@
 <h4 class="page_header">Edit Recipe</h4>
 <hr>
 <div class="container">
-    <div class="add-background">
-        <div class="row">
-            <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
-                <div class="main-item-style">    
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">insert_comment</i>
-                            <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
-                            <label for="icon_prefix">Recipe Name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">language</i>
-                            <select id="cuisine" name="cuisine">
+	<div class="add-background">
+		<div class="row">
+			<form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
+				<div class="main-item-style">
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">insert_comment</i>
+							<input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
+							<label for="icon_prefix">Recipe Name</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">language</i>
+							<select id="cuisine" name="cuisine">
                                 <option value="" disabled selected>Choose Cuisine</option>
                                 {% for cuisine in cuisines %}
                                     {% if cuisine.name == recipe.cuisine%}
@@ -30,11 +30,11 @@
                                 {% endfor %}
 
                             </select>
-                            <label>Recipe Cuisine</label>
-                        </div>
-                    </div>
+							<label>Recipe Cuisine</label>
+						</div>
+					</div>
 
-                    <div class="row">
+					<div class="row">
 						<div class="input-field col s12">
 							<i class="material-icons prefix">restaurant_menu</i>
 							<select id="tools" name="tools[]" size="4" multiple>
@@ -47,18 +47,18 @@
 							<label>Kitchen Tool</label>
 						</div>
 
-                    
-                    <div class="row">
-                        <div class="input-field col s12" id="matfix">
-                            <i class="material-icons prefix">today</i>
-                            <input id="season" name="season" type="text" class="datepicker" value="{{recipe.season}}">
-                            <label for="icon_prefix">Season</label>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="duration-style">
-                    <div class="row">
+						<div class="row">
+							<div class="input-field col s12" id="matfix">
+								<i class="material-icons prefix">today</i>
+								<input id="season" name="season" type="text" class="datepicker" value="{{recipe.season}}">
+								<label for="icon_prefix">Season</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="duration-style">
+						<div class="row">
 							<h5 class="center">Duration</h5>
 							<div class="input-field col s12 m6 l4">
 								<i class="material-icons prefix">access_time</i>
@@ -75,96 +75,100 @@
 								<input id="total_time" name="total_time"  type="text" class="validate" value="{{recipe.total_time}}"></textarea>
 								<label for="icon_telephone">Total Time</label>
 							</div>
-                    </div>
-				</div> 
+						</div>
+					</div>
 
-                <div class="ingredient-style">
-                    <h5 class="center">Ingredients</h5>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">filter_1</i>
-                                <input id="main_ingredient" name="main_ingredient"  type="text" class="validate" value="{{recipe.main_ingredient}}"></textarea>
-                                <label for="icon_telephone">Main Ingredient</label>
-                            </div>                 
+					<div class="ingredient-style">
+						<h5 class="center">Ingredients</h5>
+						<div class="row">
+							<div class="input-field col s12">
+								<i class="material-icons prefix">filter_1</i>
+								<input id="main_ingredient" name="main_ingredient"  type="text" class="validate" value="{{recipe.main_ingredient}}"></textarea>
+								<label for="icon_telephone">Main Ingredient</label>
+							</div>
 
-                             <!--Ingredients-->
-                            <div class="row">
-                                <div class="col s10 offset-s1">
-                                    <div class="card card-bgd">
-                                        <div class="card-content">
-                                            <span class="card-title center"></span>
+							<!--Ingredients-->
+							<div class="row">
+								<div class="col s10 offset-s1">
+									<div class="card card-bgd">
+										<div class="card-content">
+											<span class="card-title center"></span>
 
-                                            {% for ingredient in recipe.ingredients %}
-                                            <div class="ingredient">
-                                                <div class="input-field whites-4">
-                                                    <textarea placeholder="200g Butter" name="ingredients[]" class="materialize-textarea ingredient-input validate" minlength="3" maxlength="200" required>{{ ingredient }}</textarea>
-                                                </div>
-                                            </div>
-                                            {% endfor %}
+											{% for ingredient in recipe.ingredients %}
+											<div class="ingredient">
+												<div class="input-field whites-4">
+													<textarea placeholder="200g Butter" name="ingredients[]" class="materialize-textarea ingredient-input validate" minlength="3" maxlength="200" required>{{ ingredient }}</textarea>
+												</div>
+											</div>
+											{% endfor %}
 
-                                            <!-- add button -->
-                                            <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
-                                            <!-- Remove button -->
-                                            <a id="remove_ingredient" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>                              
-                </div>
+											<!-- add button -->
+											<a id="add_ingredient"
+												class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+											<!-- Remove button -->
+											<a id="remove_ingredient"
+												class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
 
-                <div class="ingredient-style">
-                <h5 class="center">Method</h5>
-                    <div class="row">
-                        <!--Steps-->
-                            <div class="row">
-                                <div class="col s10 offset-s1">
-                                    <div class="card card-bgd">
-                                        <div class="card-content">
-                                            <span class="card-title center"></span>
+						</div>
+					</div>
 
-                                            {% for step in recipe.steps %}
-                                            <div class="step">
-                                                <div class="input-field whites-4">
-                                                    <textarea placeholder="Enter step" name="steps[]" class="materialize-textarea step-input validate" minlength="3" maxlength="200" required>{{ step }}</textarea>
-                                                </div>                                                
-                                            </div>
-                                            {% endfor %}
+					<div class="ingredient-style">
+						<h5 class="center">Method</h5>
+						<div class="row">
+							<!--Steps-->
+							<div class="row">
+								<div class="col s10 offset-s1">
+									<div class="card card-bgd">
+										<div class="card-content">
+											<span class="card-title center"></span>
 
-                                            <!-- add button -->
-                                            <a id="add_step" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
-                                            <!-- Remove button -->
-                                            <a id="remove_step" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>                                                    
-                </div>  
+											{% for step in recipe.steps %}
+											<div class="step">
+												<div class="input-field whites-4">
+													<textarea placeholder="Enter step" name="steps[]" class="materialize-textarea step-input validate" minlength="3" maxlength="200" required>{{ step }}</textarea>
+												</div>
+											</div>
+											{% endfor %}
+
+											<!-- add button -->
+											<a id="add_step"
+												class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+											<!-- Remove button -->
+											<a id="remove_step"
+												class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
 
 
-                <div class="row center">
-                    <button class="btn waves-effect waves-light btn_save" type="submit" name="action">Edit Recipe
+					<div class="row center">
+						<button class="btn waves-effect waves-light btn_save" type="submit" name="action">Edit Recipe
                         <i class="material-icons right">playlist_add</i>
                     </button>
-                    <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn grey">
-                        <i class="material-icons right">cancel</i>Cancel
-                    </a>
-                </div>
+						<a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn grey">
+							<i class="material-icons right">cancel</i>Cancel
+						</a>
+					</div>
 
-            </form>
-        </div>
-    </div>            
+			</form>
+		</div>
+	</div>
 </div>
 {% endblock %}
 
 {% block script %}
-    <script type="text/javascript">
-        $(document).ready(function(){
+<script type="text/javascript">
+	$(document).ready(function(){
             due_date = Date.parse('{{recipe.due_date}}')
             $('#due_date').pickadate('picker').set('select', due_date, { format: 'dd/mm/yyyy'}).trigger('change')
         });
-    </script>
+</script>
 {% endblock %}

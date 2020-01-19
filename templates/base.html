@@ -8,10 +8,12 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		type="text/css" />
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
-	
+
 
 </head>
 <header>
@@ -42,62 +44,62 @@
 		{% endblock %}
 	</div>
 
-        <!--*******FOOTER*******-->
-    <footer>
-        <div id="footerdetails" class="row footerstyle">
-            <div class="col s12 m6 l9">
-                <h5>OurCookBook</h5>
-                <p class="inline-block">
-                    Find the best recipe for you
-                </p>
-            </div>
+	<!--*******FOOTER*******-->
+	<footer>
+		<div id="footerdetails" class="row footerstyle">
+			<div class="col s12 m6 l9">
+				<h5>OurCookBook</h5>
+				<p class="inline-block">
+					Find the best recipe for you
+				</p>
+			</div>
 
 
-            <div class="col s12 m6 l3">
-                
-                <ul class="social-links" id="menu">
-                    <li class="nav-text">Social</li>
-                    <li>
-                        <a target="_blank" href="https://www.facebook.com">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://twitter.com/?lang=en">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                            <span class="sr-only">Twitter</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://ie.linkedin.com/">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            <span class="sr-only">LinkedIn</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://www.instagram.com/">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://www.youtube.com/results?search_query=the+monkees">
-                            <i class="fa fa-youtube" aria-hidden="true"></i>
-                            <span class="sr-only">YouTube</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+			<div class="col s12 m6 l3">
 
-    </footer>
+				<ul class="social-links" id="menu">
+					<li class="nav-text">Social</li>
+					<li>
+						<a target="_blank" href="https://www.facebook.com">
+							<i class="fa fa-facebook" aria-hidden="true"></i>
+							<span class="sr-only">Facebook</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://twitter.com/?lang=en">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+							<span class="sr-only">Twitter</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://ie.linkedin.com/">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+							<span class="sr-only">LinkedIn</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.instagram.com/">
+							<i class="fa fa-instagram" aria-hidden="true"></i>
+							<span class="sr-only">Instagram</span>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.youtube.com/results?search_query=the+monkees">
+							<i class="fa fa-youtube" aria-hidden="true"></i>
+							<span class="sr-only">YouTube</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 
-   
+	</footer>
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    
+	<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function() {
             $('.collapsible').collapsible();
@@ -121,8 +123,8 @@
         });
 	</script>
 
-    
-    {% block script %}
+
+	{% block script %}
 	{% endblock %}
 </body>
 

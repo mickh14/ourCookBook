@@ -1,52 +1,52 @@
 {% extends 'base.html'%}
 
 {% block content %}
-    <h4 class="page_header">Add Tool</h4>
-    <hr>
-    <div class="container add-background">
-        <form action="{{ url_for('insert_tool') }}" method="POST" class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">insert_comment</i>
-                    <input id="tool_name" name="tool_name" type="text" class="validate">
-                    <label for="tool_name">Tool Name</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">poll</i>
-                    <input id="tool_description" name="tool_description" type="text" class="validate">
-                    <label for="tool_description">Tool Description</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">euro_symbol</i>
-                    <input id="tool_cost" name="tool_cost" type="text" class="validate">
-                    <label for="tool_cost">Tool Cost</label>
-                </div>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">star_border</i>
-                    <input id="tool_model" name="tool_model" type="text" class="validate">
-                    <label for="tool_model">Tool Model</label>
-                </div>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">color_lens</i>
-                    <input id="tool_color" name="tool_color" type="text" class="validate">
-                    <label for="tool_color">Tool Color</label>
-                </div>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">done_all</i>
-                    <input id="tool_warranty" name="tool_warranty" type="text" class="validate">
-                    <label for="tool_warranty">Tool Warranty (years)</label>
-                </div>
-            </div>
-            
-            <div class="row center">
-                <button class="btn waves-effect waves-light add-button" type="submit" name="action">Add Tool
+<h4 class="page_header">Add Tool</h4>
+<hr>
+<div class="container add-background">
+	<form action="{{ url_for('insert_tool') }}" method="POST" class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">insert_comment</i>
+				<input id="tool_name" name="tool_name" type="text" class="validate">
+				<label for="tool_name">Tool Name</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">poll</i>
+				<input id="tool_description" name="tool_description" type="text" class="validate">
+				<label for="tool_description">Tool Description</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">euro_symbol</i>
+				<input id="tool_cost" name="tool_cost" type="text" class="validate">
+				<label for="tool_cost">Tool Cost</label>
+			</div>
+			<div class="input-field col s12">
+				<i class="material-icons prefix">star_border</i>
+				<input id="tool_model" name="tool_model" type="text" class="validate">
+				<label for="tool_model">Tool Model</label>
+			</div>
+			<div class="input-field col s12">
+				<i class="material-icons prefix">color_lens</i>
+				<input id="tool_color" name="tool_color" type="text" class="validate">
+				<label for="tool_color">Tool Color</label>
+			</div>
+			<div class="input-field col s12">
+				<i class="material-icons prefix">done_all</i>
+				<input id="tool_warranty" name="tool_warranty" type="text" class="validate">
+				<label for="tool_warranty">Tool Warranty (years)</label>
+			</div>
+		</div>
+
+		<div class="row center">
+			<button class="btn waves-effect waves-light add-button" type="submit" name="action">Add Tool
                     <i class="material-icons right">playlist_add</i>
                 </button>
-            </div>
-        </form>
-</div>        
+		</div>
+	</form>
+</div>
 {% endblock %}

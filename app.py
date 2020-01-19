@@ -195,7 +195,7 @@ def one_tool():
     print(the_tool)
     search_tools = mongo.db.tools.find({'tool_name': the_tool})
 
-    return render_template("buytool.html", tools=search_tools)                           
+    return render_template("buytool.html", tools=search_tools)
 
 
 if __name__ == '__main__':
