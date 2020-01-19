@@ -94,8 +94,8 @@ The database is made up of the following collections.
 
 **Recipes**
 
-- id: \&lt;ObjectId()\&gt;
-- recipe\_name: \&lt;string\&gt;
+- id: <ObjectId()>
+- recipe\_name: <string>
 - cuisine: \&lt;string\&gt;
 - season: \&lt;string\&gt;
 - prep\_time: \&lt;string\&gt;
